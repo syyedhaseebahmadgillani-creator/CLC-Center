@@ -9,30 +9,59 @@
   <meta name="author" content="Care Line Call Center" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* small extra styles for hero background and card shadows */
-    .hero-bg{background: linear-gradient(90deg, rgba(6,95,70,0.95), rgba(3,105,161,0.9));}
+    :root{
+      --accent-1: #0f766e;
+      --accent-2: #0369a1;
+      --muted: #6b7280;
+    }
+    body{font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+    .hero-bg{background: linear-gradient(135deg,var(--accent-1),var(--accent-2));}
+    .card{transition: transform .22s ease, box-shadow .22s ease}
+    .card:hover{transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.12)}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.14)}
+    .fade-up{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
+    .fade-up.show{opacity:1; transform:none}
+    /* floating whatsapp */
+    .whatsapp-btn{position:fixed; right:18px; bottom:18px; z-index:60; display:flex; align-items:center; gap:10px; background:linear-gradient(180deg,var(--accent-1),var(--accent-2)); color:white; padding:12px 14px; border-radius:999px; box-shadow:0 8px 30px rgba(3,7,18,0.18); text-decoration:none}
+    .logo-mark{display:inline-block; vertical-align:middle}
+    @media (max-width:768px){ .hidden-md{display:none} }
   </style>
 </head>
 <body class="antialiased text-slate-800 bg-slate-50">
   <header class="bg-white shadow-sm">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-md bg-gradient-to-br from-emerald-500 to-sky-600 flex items-center justify-center text-white font-bold">CL</div>
-        <div>
-          <h1 class="text-lg font-semibold">Care Line Call Center</h1>
-          <p class="text-xs text-slate-500">Affordable Care Act & Final Expense Campaigns</p>
-        </div>
+      <div class="flex items-center gap-4">
+        <!-- Corporate SVG logo: monogram + wordmark -->
+        <a href="#" class="flex items-center gap-3" aria-label="Care Line Call Center">
+          <svg class="logo-mark" width="44" height="44" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#10b981" />
+                <stop offset="1" stop-color="#0ea5e9" />
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="12" fill="url(#g1)"/>
+            <path d="M20 42v-20h6l6 11 6-11h6v20h-4V28l-8 14-8-14v14h-4z" fill="white" opacity="0.98"/>
+          </svg>
+          <div>
+            <div class="text-lg font-semibold">Care Line Call Center</div>
+            <div class="text-xs text-muted text-slate-500">ACA Enrollment · Final Expense</div>
+          </div>
+        </a>
       </div>
-      <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#team" class="hover:underline">Team</a>
+
+      <nav class="hidden md:flex gap-6 text-sm items-center">
+        <a href="#services" class="text-slate-600 hover:text-slate-800">Services</a>
+        <a href="#about" class="text-slate-600 hover:text-slate-800">About</a>
+        <a href="#team" class="text-slate-600 hover:text-slate-800">Team</a>
         <a href="#contact" class="text-emerald-600 font-semibold">Contact</a>
       </nav>
-      <div class="hidden md:flex items-center gap-3">
-        <a href="tel:+923435549412" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-md shadow">Call Us <span class="ml-1 font-mono">+923435549412</span></a>
+
+      <div class="hidden-md hidden md:flex items-center gap-3">
+        <a href="tel:+923435549412" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-md shadow">Call <span class="ml-1 font-mono">+92 343 5549412</span></a>
         <a href="https://wa.me/923375647705" class="inline-flex items-center gap-2 border border-emerald-600 text-emerald-600 px-4 py-2 rounded-md">WhatsApp</a>
       </div>
+
       <button id="nav-toggle" class="md:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -44,29 +73,29 @@
       <a href="#about" class="block py-2">About</a>
       <a href="#team" class="block py-2">Team</a>
       <a href="#contact" class="block py-2">Contact</a>
-      <a href="tel:+923435549412" class="block py-2 text-emerald-600">Call +923435549412</a>
-      <a href="https://wa.me/923375647705" class="block py-2 text-emerald-600">WhatsApp +923375647705</a>
+      <a href="tel:+923435549412" class="block py-2 text-emerald-600">Call +92 343 5549412</a>
+      <a href="https://wa.me/923375647705" class="block py-2 text-emerald-600">WhatsApp +92 337 5647705</a>
     </div>
   </header>
 
   <main>
     <section class="hero-bg text-white">
-      <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+      <div class="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">
-          <h2 class="text-4xl font-extrabold leading-tight">Care Line Call Center</h2>
-          <p class="mt-4 text-lg text-slate-100/90">We help campaigns convert callers into clients — specialized teams for Affordable Care Act (ACA) enrollment and Final Expense planning. Scalable, compliant, and empathetic service.</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Care Line Call Center</h1>
+          <p class="mt-4 text-lg text-slate-100/90">Specialized, compliant call center services for Affordable Care Act enrollments and Final Expense campaigns. Trusted since 2005 with over 2,000 successful projects.</p>
           <div class="mt-6 flex gap-3">
-            <a href="#contact" class="bg-white text-emerald-600 px-5 py-3 rounded-md font-semibold shadow">Get Started</a>
-            <a href="#services" class="border border-white/30 px-5 py-3 rounded-md">Our Services</a>
+            <a href="#contact" class="bg-white text-emerald-600 px-6 py-3 rounded-md font-semibold shadow">Request a Demo</a>
+            <a href="#services" class="border btn-ghost text-white px-6 py-3 rounded-md">Our Services</a>
           </div>
           <ul class="mt-6 text-sm space-y-2 text-slate-100/80">
-            <li>HIPAA-aware call handling for health enrollment</li>
-            <li>Trained agents for Final Expense and senior audiences</li>
-            <li>Transparent pricing and performance reporting</li>
+            <li>HIPAA-aware enrollment support</li>
+            <li>Senior-friendly final expense agents</li>
+            <li>Transparent reporting & measurable outcomes</li>
           </ul>
         </div>
         <div class="md:w-1/2">
-          <div class="bg-white rounded-2xl p-6 shadow-xl">
+          <div class="bg-white rounded-2xl p-6 shadow-xl card">
             <h3 class="text-slate-800 font-semibold">Quick contact</h3>
             <p class="text-sm text-slate-500">Leave your details and we’ll call within one business day.</p>
             <form id="leadForm" class="mt-4 grid gap-3">
@@ -95,7 +124,7 @@
       <h3 class="text-2xl font-bold">Our services</h3>
       <p class="text-slate-600 mt-2">Designed for measurable campaign results and empathetic conversations.</p>
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <article class="bg-white rounded-lg p-6 shadow-sm">
+        <article class="bg-white rounded-lg p-6 shadow-sm card fade-up">
           <h4 class="text-xl font-semibold">Affordable Care Act (ACA) Campaigns</h4>
           <p class="mt-2 text-slate-600">Enrollment assistance, eligibility verification, appointment setting, lead nurturing, and multilingual support. Agents follow compliant scripts and escalation paths.</p>
           <ul class="mt-4 text-sm space-y-2 text-slate-500">
@@ -105,7 +134,7 @@
           </ul>
         </article>
 
-        <article class="bg-white rounded-lg p-6 shadow-sm">
+        <article class="bg-white rounded-lg p-6 shadow-sm card fade-up">
           <h4 class="text-xl font-semibold">Final Expense Campaigns</h4>
           <p class="mt-2 text-slate-600">Trained agents guide seniors and families through sensitive conversations about final expenses, burial plans, and small-death-benefit insurance.</p>
           <ul class="mt-4 text-sm space-y-2 text-slate-500">
@@ -123,15 +152,15 @@
         <p class="mt-3 text-slate-700">Established in 2005, Care Line Call Center has completed over 2,000 projects across healthcare and senior-care campaigns. We combine experienced call agents, campaign specialists, and compliance-first processes to deliver predictable outcomes for health and final expense campaigns.</p>
         <p class="mt-3 text-slate-700">Our strengths include empathy-centered conversations, fast onboarding, strict data security, and measurable results. We pride ourselves on high client satisfaction, transparent reporting, 24/7 support options, and flexible, affordable campaign packages tailored to each client. Our multilingual team, regular QA coaching, and data-driven reporting consistently increase conversion rates for our partners.</p>
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="bg-white p-4 rounded-lg shadow-sm card">
             <h4 class="font-semibold">Trained Agents</h4>
             <p class="text-sm text-slate-600 mt-1">Role-specific training, mock calls, and periodic refreshers.</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="bg-white p-4 rounded-lg shadow-sm card">
             <h4 class="font-semibold">Compliance</h4>
             <p class="text-sm text-slate-600 mt-1">HIPAA-aware processes, call recording controls, and secure data handling.</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="bg-white p-4 rounded-lg shadow-sm card">
             <h4 class="font-semibold">Reporting</h4>
             <p class="text-sm text-slate-600 mt-1">Weekly dashboards, conversion metrics, and agent-level feedback.</p>
           </div>
@@ -143,23 +172,23 @@
       <h3 class="text-2xl font-bold">Leadership</h3>
       <p class="text-slate-600 mt-2">Led by experienced campaign managers and senior call center specialists.</p>
       <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+        <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
           <div class="h-24 w-24 rounded-full bg-slate-200 mx-auto flex items-center justify-center text-slate-500 font-semibold">SH</div>
           <h5 class="mt-3 font-semibold">Syyed Haseeb Ahmad Gillani</h5>
           <p class="text-sm text-slate-500">Owner & Campaign Lead</p>
           <p class="text-sm text-emerald-600 mt-1"><a href="mailto:haseebahmedgilani412@gmail.com">haseebahmedgilani412@gmail.com</a></p>
         </div>
-        <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+        <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
           <div class="h-24 w-24 rounded-full bg-slate-200 mx-auto flex items-center justify-center text-slate-500 font-semibold">SM</div>
           <h5 class="mt-3 font-semibold">Syed Mohib Gillani</h5>
           <p class="text-sm text-slate-500">Manager</p>
         </div>
-        <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+        <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
           <div class="h-24 w-24 rounded-full bg-slate-200 mx-auto flex items-center justify-center text-slate-500 font-semibold">MK</div>
           <h5 class="mt-3 font-semibold">Mark</h5>
           <p class="text-sm text-slate-500">Agent Mentor</p>
         </div>
-        <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+        <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
           <div class="h-24 w-24 rounded-full bg-slate-200 mx-auto flex items-center justify-center text-slate-500 font-semibold">SM</div>
           <h5 class="mt-3 font-semibold">Syed Muneeb Ahmad Gillani</h5>
           <p class="text-sm text-slate-500">IT & Systems — Platform & Integrations</p>
@@ -171,15 +200,15 @@
       <h3 class="text-2xl font-bold">Contact & Get a Quote</h3>
       <p class="text-slate-600 mt-2">Tell us about your campaign and target; we'll reply with a tailored plan and pricing.</p>
       <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="bg-white p-6 rounded-lg shadow-sm card">
           <h4 class="font-semibold">Contact details</h4>
-          <p class="text-sm text-slate-600 mt-2">Phone: <a href="tel:+923435549412" class="text-emerald-600">+923435549412</a></p>
+          <p class="text-sm text-slate-600 mt-2">Phone: <a href="tel:+923435549412" class="text-emerald-600">+92 343 5549412</a></p>
           <p class="text-sm text-slate-600">Email: <a href="mailto:info.carelinecallcenter@gmail.com" class="text-emerald-600">info.carelinecallcenter@gmail.com</a></p>
-          <p class="text-sm text-slate-600">WhatsApp: <a href="https://wa.me/923375647705" class="text-emerald-600">+923375647705</a></p>
+          <p class="text-sm text-slate-600">WhatsApp: <a href="https://wa.me/923375647705" class="text-emerald-600">+92 337 5647705</a></p>
           <p class="text-sm text-slate-600 mt-2">Owner: <strong>Syyed Haseeb Ahmad Gillani</strong> — <a href="mailto:haseebahmedgilani412@gmail.com" class="text-emerald-600">haseebahmedgilani412@gmail.com</a></p>
           <p class="text-sm text-slate-600 mt-4">We offer demo calls, campaign audits, and pilot programs.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="bg-white p-6 rounded-lg shadow-sm card">
           <h4 class="font-semibold">Schedule a demo</h4>
           <p class="text-sm text-slate-600 mt-2">Choose a date and we’ll call you to discuss goals and pricing.</p>
           <form id="demoForm" class="mt-4 grid gap-3">
@@ -193,6 +222,15 @@
       </div>
     </section>
   </main>
+
+  <!-- Floating WhatsApp button -->
+  <a class="whatsapp-btn" href="https://wa.me/923375647705" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <path d="M21 12.08c0-4.97-4.03-9-9-9s-9 4.03-9 9c0 1.59.42 3.08 1.16 4.36L3 21l5.03-2.35A8.93 8.93 0 0012 21c4.97 0 9-4.03 9-8.92z" fill="white" opacity="0.06"/>
+      <path d="M17.472 14.382c-.297-.148-1.758-.867-2.03-.967-.273-.099-.472-.148-.671.148-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-1.758-.867-2.905-1.54-4.08-3.204-.31-.394.31-.366.892-1.217.099-.198.05-.372-.025-.52-.074-.148-.671-1.611-.92-2.208-.243-.579-.49-.5-.67-.51-.173-.01-.372-.01-.57-.01-.198 0-.52.074-.793.372s-1.04 1.016-1.04 2.479c0 1.462 1.064 2.875 1.213 3.074.148.198 2.095 3.2 5.075 4.487 1.414.611 2.514.977 3.376 1.25.448.138.856.119 1.18.072.36-.054 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+    </svg>
+    <span style="font-weight:600">Chat on WhatsApp</span>
+  </a>
 
   <footer class="bg-white border-t mt-12">
     <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -210,6 +248,18 @@
       const m = document.getElementById('mobile-nav');
       m.classList.toggle('hidden');
     });
+
+    // fade-up on scroll (small, dependency-free)
+    function onScrollFade(){
+      const items = document.querySelectorAll('.fade-up');
+      const windowBottom = window.innerHeight * 0.9;
+      items.forEach(i=>{
+        const rect = i.getBoundingClientRect();
+        if(rect.top < windowBottom) i.classList.add('show');
+      });
+    }
+    window.addEventListener('scroll', onScrollFade);
+    window.addEventListener('load', onScrollFade);
 
     // Simple form handlers (demo only) - replace with your endpoint
     function simulateSubmit(form, msgEl){
