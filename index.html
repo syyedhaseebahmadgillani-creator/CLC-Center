@@ -132,7 +132,7 @@ select:-webkit-autofill {
           <div class="bg-white rounded-2xl p-6 shadow-xl card">
             <h3 class="text-slate-800 font-semibold">Quick contact</h3>
             <p class="text-sm text-slate-500">Leave your details and we’ll call within one business day.</p>
-            <form id="leadForm" class="mt-4 grid gap-3">
+            <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-4 grid gap-3">
               <input name="name" required placeholder="Full name" class="w-full px-4 py-2 border rounded-md focus:outline-none" />
               <input name="phone" required placeholder="Phone (best contact)" class="w-full px-4 py-2 border rounded-md" />
               <input name="email" placeholder="Email (optional)" class="w-full px-4 py-2 border rounded-md" />
@@ -147,7 +147,6 @@ select:-webkit-autofill {
                 <button type="submit" class="flex-1 bg-emerald-600 text-white px-4 py-2 rounded-md">Request Callback</button>
                 <a href="tel:+923435549412" class="flex-1 border border-slate-200 px-4 py-2 rounded-md text-center">Call Now</a>
               </div>
-              <p id="formMsg" class="text-xs text-slate-500"></p>
             </form>
           </div>
         </div>
@@ -252,7 +251,6 @@ select:-webkit-autofill {
             <input name="phone" required placeholder="Phone" class="w-full px-4 py-2 border rounded-md" />
             <input type="date" name="date" class="w-full px-4 py-2 border rounded-md" />
             <button type="submit" class="mt-2 bg-emerald-600 text-white px-4 py-2 rounded-md">Request Demo</button>
-            <p id="demoMsg" class="text-xs text-slate-500"></p>
           </form>
         </div>
       </div>
@@ -296,18 +294,6 @@ select:-webkit-autofill {
     }
     window.addEventListener('scroll', onScrollFade);
     window.addEventListener('load', onScrollFade);
-
-    {
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        const data = new FormData(form);
-        const name = data.get('name') || '';
-        msgEl.textContent = 'Thanks ' + (name.split(' ')[0] || '') + '! We received your request.';
-        form.reset();
-      });
-    }
-    simulateSubmit(document.getElementById('leadForm'), document.getElementById('formMsg'));
-    simulateSubmit(document.getElementById('demoForm'), document.getElementById('demoMsg'));
   </script>
 </body>
 </html>
