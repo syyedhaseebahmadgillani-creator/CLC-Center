@@ -9,15 +9,45 @@
   <meta name="author" content="Care Line Call Center" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      --accent-1: #0f766e;
-      --accent-2: #0369a1;
-      --muted: #6b7280;
-    }
-    /* --- FORM FIELD FIX (TEXT ALWAYS VISIBLE) --- */
+    /* Universal input field styling fix */
 input, textarea, select {
-  color: #1e293b;               /* dark gray text */
-  background-color: #ffffff;    /* white background */
+  color: #0f172a !important; /* dark visible text */
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important; /* soft gray */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* Specifically fix date and phone input visibility */
+input[type="date"],
+input[type="tel"],
+input[type="number"] {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+}
+
+/* Ensure placeholder shows in all browsers */
+input[type="date"]::before {
+  color: #94a3b8 !important;
+  content: attr(placeholder);
+  margin-right: 10px;
+}
+
   border: 1px solid #cbd5e1;    /* soft border */
   border-radius: 6px;
   padding: 10px 12px;
