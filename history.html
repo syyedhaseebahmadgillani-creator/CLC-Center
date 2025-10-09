@@ -7,14 +7,14 @@
   <meta name="description" content="Discover Care Line Call Center's proven record in American insurance campaigns from 2005 to today." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    .card {transition: transform .2s ease, box-shadow .2s ease;}
-    .card:hover {transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,.1);}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+    .card{transition:transform .2s ease,box-shadow .2s ease}
+    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,.1)}
   </style>
 </head>
 <body class="antialiased text-slate-800 bg-slate-50">
 
-<!-- Header -->
+<!-- Header (keeps nav consistent with site) -->
 <header class="bg-white shadow-sm">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3">
@@ -24,7 +24,8 @@
         <div class="text-xs text-slate-500">ACA Enrollment · Final Expense</div>
       </div>
     </a>
-    <nav class="hidden md:flex gap-6 text-sm items-center">
+
+    <nav class="hidden md:flex gap-6 text-sm items-center" aria-label="Primary">
       <a href="index.html#services" class="hover:text-emerald-600">Services</a>
       <a href="index.html#about" class="hover:text-emerald-600">About</a>
       <a href="index.html#team" class="hover:text-emerald-600">Team</a>
@@ -36,59 +37,108 @@
   </div>
 </header>
 
-<!-- MAIN CONTENT -->
-<main class="py-20">
+<!-- HERO -->
+<section class="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white py-14">
   <div class="max-w-6xl mx-auto px-6 text-center">
-    <h1 class="text-4xl font-bold text-emerald-700">Our Record of Excellence</h1>
-    <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-      Since 2005, Care Line Call Center has been a trusted partner in American insurance campaigns,
-      helping agencies grow while supporting clients nationwide with professionalism and care.
-    </p>
+    <h1 class="text-3xl md:text-4xl font-bold">Our Record of Excellence</h1>
+    <p class="mt-3 max-w-2xl mx-auto text-slate-100/90">Since 2005, Care Line Call Center has partnered with American insurance agencies to deliver compliant, human-first enrollment and lead-generation campaigns.</p>
+    <div class="mt-6 flex justify-center gap-3">
+      <a href="index.html#contact" class="bg-white text-emerald-600 px-5 py-2 rounded-md font-semibold shadow">Request a Partnership</a>
+      <a href="locations.html" class="border border-white text-white px-5 py-2 rounded-md">Our Offices</a>
+    </div>
+  </div>
+</section>
 
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+<!-- MAIN: timeline + stats -->
+<main class="py-12">
+  <div class="max-w-6xl mx-auto px-6">
 
-      <div class="card bg-white p-6 rounded-xl shadow-sm">
-        <h2 class="text-xl font-semibold text-emerald-700">2005–2010: The Foundation Years</h2>
-        <p class="mt-2 text-slate-600 text-sm">
-          Care Line Call Center began operations with a small team of 10 agents, focusing on life and
-          health insurance lead generation. Within five years, our commitment to quality service built
-          long-term partnerships with multiple U.S. insurance providers.
-        </p>
-      </div>
-
-      <div class="card bg-white p-6 rounded-xl shadow-sm">
-        <h2 class="text-xl font-semibold text-emerald-700">2011–2015: Expanding Across America</h2>
-        <p class="mt-2 text-slate-600 text-sm">
-          Our company grew to 100+ trained agents. We expanded into ACA (Affordable Care Act) enrollments
-          and began serving clients from Florida, Texas, and California. We built a reputation for consistent
-          performance and compliance excellence.
-        </p>
-      </div>
-
-      <div class="card bg-white p-6 rounded-xl shadow-sm">
-        <h2 class="text-xl font-semibold text-emerald-700">2016–2020: Digital Innovation</h2>
-        <p class="mt-2 text-slate-600 text-sm">
-          By adopting advanced CRM systems and cloud-based dialing, Care Line Call Center became a fully
-          integrated remote team — allowing 24/7 operations across multiple time zones for major insurance
-          campaigns across the U.S.
-        </p>
-      </div>
-
-      <div class="card bg-white p-6 rounded-xl shadow-sm">
-        <h2 class="text-xl font-semibold text-emerald-700">2021–Present: Excellence and Growth</h2>
-        <p class="mt-2 text-slate-600 text-sm">
-          We now operate with international offices and serve multiple U.S. insurance partners,
-          offering bilingual support and customer-first call handling. Our team continues to deliver
-          exceptional ACA enrollments, final expense, and Medicare support services.
-        </p>
-      </div>
-
+    <!-- Short intro -->
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold text-emerald-700">A quick look at our journey</h2>
+      <p class="text-slate-600 mt-2 max-w-2xl mx-auto">We combine compliance, empathic agent training, and measurable processes to drive results for ACA, Medicare, and final expense campaigns.</p>
     </div>
 
-    <!-- CTA -->
-    <div class="mt-12">
-      <a href="index.html" class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-md shadow hover:bg-emerald-700 transition">← Back to Home</a>
+    <!-- Timeline -->
+    <section class="mb-12">
+      <div class="border-l-4 border-emerald-600 pl-6 space-y-10">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-emerald-600"></div>
+            <h3 class="text-lg font-semibold">2005–2010 — Foundation</h3>
+          </div>
+          <p class="text-slate-600 mt-2">Started with a focused team of agents for life & health insurance outreach; built early partnerships with independent brokers and regional agencies.</p>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-emerald-600"></div>
+            <h3 class="text-lg font-semibold">2011–2015 — Growth & Compliance</h3>
+          </div>
+          <p class="text-slate-600 mt-2">Scaled training, added HIPAA processes, expanded to serve U.S. states with targeted ACA enrollment programs and performance reporting.</p>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-emerald-600"></div>
+            <h3 class="text-lg font-semibold">2016–2020 — Digital & Performance</h3>
+          </div>
+          <p class="text-slate-600 mt-2">Adopted CRM and cloud dialing; introduced quality monitoring, QA scoring, and weekly KPI dashboards for partners—improving conversion and retention.</p>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-emerald-600"></div>
+            <h3 class="text-lg font-semibold">2021–Present — Remote Excellence</h3>
+          </div>
+          <p class="text-slate-600 mt-2">Operates internationally with bilingual agents; offers 24/7 support and data-driven optimization for ACA, Medicare, and final expense campaigns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements / metrics -->
+    <section class="bg-slate-50 p-6 rounded-xl">
+      <h3 class="text-xl font-semibold text-emerald-700 mb-6">Proven results (high level)</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-4 bg-white rounded-lg card">
+          <div class="text-3xl font-bold text-emerald-700">20+</div>
+          <div class="text-sm text-slate-600 mt-1">Years</div>
+        </div>
+        <div class="p-4 bg-white rounded-lg card">
+          <div class="text-3xl font-bold text-emerald-700">2,000+</div>
+          <div class="text-sm text-slate-600 mt-1">Completed campaigns</div>
+        </div>
+        <div class="p-4 bg-white rounded-lg card">
+          <div class="text-3xl font-bold text-emerald-700">500K+</div>
+          <div class="text-sm text-slate-600 mt-1">Calls/year</div>
+        </div>
+        <div class="p-4 bg-white rounded-lg card">
+          <div class="text-3xl font-bold text-emerald-700">98%</div>
+          <div class="text-sm text-slate-600 mt-1">Client retention</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials snippet -->
+    <section class="mt-10">
+      <h4 class="text-lg font-semibold text-emerald-700">What partners say</h4>
+      <div class="mt-4 grid md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <p class="text-slate-600 italic">"Care Line's team handled our ACA campaigns with great care and accuracy — conversion and reporting improved every month."</p>
+          <p class="mt-3 font-semibold text-emerald-700">— Regional Broker, FL</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+          <p class="text-slate-600 italic">"Reliable, compliant, and fast to scale. Their reports help us make better decisions."</p>
+          <p class="mt-3 font-semibold text-emerald-700">— National Insurance Partner</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <div class="mt-10 text-center">
+      <a href="index.html#contact" class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-md font-semibold shadow hover:bg-emerald-700 transition">Speak with our Partnerships Team</a>
     </div>
+
   </div>
 </main>
 
