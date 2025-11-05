@@ -450,3 +450,47 @@ section::after {
     background-position: 0% 50%;
   }
 }
+/* =============================
+   Footer Gradient Glow (Emerald ↔ Blue ↔ Navy)
+   ============================= */
+footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a2b5e, #0b3b37, #0f172a);
+  background-size: 400% 400%;
+  animation: footerGradientShift 25s ease infinite;
+  border-top: 1px solid rgba(16,185,129,0.2);
+  box-shadow: 0 -10px 30px rgba(14,165,233,0.05) inset;
+}
+
+@keyframes footerGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional: subtle upward glow along the footer top edge */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(16,185,129,0.5),
+    rgba(14,165,233,0.4),
+    transparent
+  );
+  filter: blur(2px);
+  opacity: 0.4;
+}
