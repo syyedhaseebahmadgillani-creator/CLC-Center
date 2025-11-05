@@ -369,3 +369,36 @@ section::after {
   opacity: 0.8;
   transition: opacity 1s ease;
 }
+/* =============================
+   Floating Particle Background
+   ============================= */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f172a, #121212);
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(16,185,129,0.8), rgba(14,165,233,0.5), transparent 70%);
+  border-radius: 50%;
+  opacity: 0.25;
+  animation: floatParticle linear infinite;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+}
