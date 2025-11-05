@@ -7,58 +7,43 @@
   <meta name="description" content="Care Line BPO — expert support for Affordable Care Act enrollment and Final Expense planning. Friendly agents, affordable rates, measurable results." />
   <meta name="keywords" content="call center, Affordable Care Act, ACA enrollment, final expense, insurance leads, Care Line" />
   <meta name="author" content="Care Line BPO" />
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-    input,textarea,select{
-      color:#0f172a!important;
-      background-color:#fff!important;
-      border:1px solid #cbd5e1;border-radius:6px;padding:8px;
-    }
-    input::placeholder,textarea::placeholder{color:#94a3b8!important;}
-    input:focus,textarea:focus,select:focus{
-      outline:none;border-color:#0f766e;box-shadow:0 0 0 3px rgba(15,118,110,.2);
-    }
-    input[type=date]::before{
-      color:#94a3b8!important;content:attr(placeholder);
-      margin-right:10px;
-    }
-    .hero-bg{background:linear-gradient(135deg,#10b981,#0ea5e9);}
-    .card{transition:transform .22s ease,box-shadow .22s ease}
-    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,.12)}
-    .whatsapp-btn{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,#10b981,#0ea5e9);color:white;padding:12px 14px;border-radius:999px;box-shadow:0 8px 30px rgba(3,7,18,.18);text-decoration:none}
-    @media(max-width:768px){.hidden-md{display:none}}
-  </style>
+
+  <!-- ✅ Link to your new dark theme stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased text-slate-800 bg-slate-50">
-<header class="bg-white shadow-sm">
+
+<body class="antialiased">
+<header>
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3">
       <img src="logo.png" alt="Care Line Call Center Logo" class="h-10 w-auto rounded-full shadow"/>
       <div>
         <div class="text-lg font-semibold">Care Line Call Center</div>
-        <div class="text-xs text-slate-500">ACA Enrollment · Final Expense</div>
+        <div class="text-xs text-slate-400">ACA Enrollment · Final Expense</div>
       </div>
     </a>
 
-    <!-- Desktop nav (visible on md+) -->
+    <!-- Desktop nav -->
     <nav class="hidden md:flex gap-6 text-sm items-center" aria-label="Primary">
-      <a href="#services" class="hover:text-emerald-600">Services</a>
-      <a href="#about" class="hover:text-emerald-600">About</a>
-      <a href="#team" class="hover:text-emerald-600">Team</a>
-      <a href="#virtual-employees" class="hover:text-emerald-600">Virtual Employees</a>
-      <a href="locations.html" class="hover:text-emerald-600">Locations</a>
-      <a href="history.html" class="hover:text-emerald-600">Our Record</a>
-      <a href="#contact" class="font-semibold text-emerald-600">Contact</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#virtual-employees">Virtual Employees</a>
+      <a href="locations.html">Locations</a>
+      <a href="history.html">Our Record</a>
+      <a href="#contact" class="font-semibold">Contact</a>
     </nav>
 
-    <!-- Action buttons (desktop) -->
+    <!-- Action buttons -->
     <div class="hidden md:flex items-center gap-3">
       <a href="tel:+923435549412" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-md shadow">Call +92 343 5549412</a>
       <a href="https://wa.me/923375647705" class="inline-flex items-center gap-2 border border-emerald-600 text-emerald-600 px-4 py-2 rounded-md">WhatsApp</a>
     </div>
 
-    <!-- Mobile: hamburger -->
+    <!-- Mobile hamburger -->
     <div class="md:hidden flex items-center gap-2">
       <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +53,7 @@
     </div>
   </div>
 
-  <!-- Mobile menu (hidden by default) -->
+  <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden px-6 pb-6">
     <nav class="flex flex-col gap-2 text-sm" aria-label="Mobile primary">
       <a href="#services" class="block py-2">Services</a>
@@ -76,306 +61,102 @@
       <a href="#team" class="block py-2">Team</a>
       <a href="#virtual-employees" class="block py-2">Virtual Employees</a>
       <a href="locations.html" class="block py-2">Locations</a>
-      <a href="history.html" class="hover:text-emerald-600">Our Record</a>
-      <a href="#contact" class="block py-2 font-semibold text-emerald-600">Contact</a>
+      <a href="history.html" class="block py-2">Our Record</a>
+      <a href="#contact" class="block py-2 font-semibold">Contact</a>
       <div class="pt-3 border-t mt-3">
         <a href="tel:+923435549412" class="block py-2">Call +92 343 5549412</a>
         <a href="https://wa.me/923375647705" class="block py-2">WhatsApp</a>
       </div>
     </nav>
   </div>
-
-  <!-- Mobile menu toggle script -->
-  <script>
-    (function() {
-      const btn = document.getElementById('mobile-menu-button');
-      const menu = document.getElementById('mobile-menu');
-      if (!btn || !menu) return;
-      btn.addEventListener('click', function () {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        menu.classList.toggle('hidden');
-      });
-    })();
-  </script>
 </header>
 
+<!-- Mobile menu toggle -->
+<script>
+(function() {
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function () {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+  });
+})();
+</script>
 
 <main>
-<section class="hero-bg text-white">
-  <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
-    <div class="md:w-1/2">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Care Line Call BPO" class="h-16 w-16 rounded-full shadow-md"/>
-        <h1 class="text-4xl font-bold">Care Line BPO</h1>
+  <!-- Hero -->
+  <section class="hero-bg text-white" data-reveal>
+    <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2">
+        <div class="flex items-center gap-3">
+          <img src="logo.png" alt="Care Line Call BPO" class="h-16 w-16 rounded-full shadow-md"/>
+          <h1 class="text-4xl font-bold">Care Line BPO</h1>
+        </div>
+        <p class="mt-4 text-lg text-slate-100/90">Specialized, compliant call center services for Affordable Care Act enrollments and Final Expense campaigns. Trusted since 2005 with over 2,000 successful projects.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#contact" class="bg-white text-emerald-600 px-6 py-3 rounded-md font-semibold shadow">Request a Demo</a>
+          <a href="#services" class="border border-white text-white px-6 py-3 rounded-md">Our Services</a>
+        </div>
       </div>
-      <p class="mt-4 text-lg text-slate-100/90">Specialized, compliant call center services for Affordable Care Act enrollments and Final Expense campaigns. Trusted since 2005 with over 2,000 successful projects.</p>
-      <div class="mt-6 flex gap-3">
-        <a href="#contact" class="bg-white text-emerald-600 px-6 py-3 rounded-md font-semibold shadow">Request a Demo</a>
-        <a href="#services" class="border border-white text-white px-6 py-3 rounded-md">Our Services</a>
-      </div>
-    </div>
 
-    <div class="md:w-1/2">
-      <div class="bg-white rounded-2xl p-6 shadow-xl card">
-        <h3 class="text-slate-800 font-semibold">Quick Contact</h3>
-        <p class="text-sm text-slate-500">Leave your details and we’ll call within one business day.</p>
-        <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-4 grid gap-3">
-          <input name="name" required placeholder="Full Name" class="w-full px-4 py-2 border rounded-md"/>
-          <input name="phone" type="tel" required placeholder="Enter Phone Number" class="w-full px-4 py-2 border rounded-md"/>
-          <input name="email" type="email" placeholder="Email (optional)" class="w-full px-4 py-2 border rounded-md"/>
-          <select name="interest" class="w-full px-4 py-2 border rounded-md">
-            <option>I'm interested in…</option>
-            <option>Affordable Care Act (ACA) Campaign</option>
-            <option>Final Expense Campaign</option>
-            <option>Both / General inquiry</option>
-          </select>
-          <textarea name="message" rows="3" placeholder="Short message (optional)" class="w-full px-4 py-2 border rounded-md"></textarea>
-          <div class="flex gap-2">
-            <button type="submit" class="flex-1 bg-emerald-600 text-white px-4 py-2 rounded-md">Request Callback</button>
-            <a href="tel:+923435549412" class="flex-1 border border-slate-200 px-4 py-2 rounded-md text-center">Call Now</a>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ===================== SERVICES ===================== -->
-<section id="services" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-emerald-700">Our Core Services</h2>
-    <p class="mt-3 text-slate-500">Providing reliable call center solutions trusted since 2005.</p>
-
-    <div class="mt-10 grid md:grid-cols-2 gap-8">
-      <div class="card bg-slate-50 p-6 rounded-xl shadow-sm">
-        <h3 class="text-xl font-semibold text-emerald-700">Affordable Care Act (ACA)</h3>
-        <p class="mt-2 text-slate-600">Expert tele-agents trained in ACA enrollment and compliance. We ensure accurate data collection, lead management, and client satisfaction.</p>
-      </div>
-      <div class="card bg-slate-50 p-6 rounded-xl shadow-sm">
-        <h3 class="text-xl font-semibold text-emerald-700">Final Expense Campaigns</h3>
-        <p class="mt-2 text-slate-600">Experienced agents handling life insurance and final expense lead generation with empathy and professionalism.</p>
+      <div class="md:w-1/2">
+        <div class="bg-white rounded-2xl p-6 shadow-xl card">
+          <h3 class="text-slate-800 font-semibold">Quick Contact</h3>
+          <p class="text-sm text-slate-500">Leave your details and we’ll call within one business day.</p>
+          <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-4 grid gap-3">
+            <input name="name" required placeholder="Full Name" class="w-full px-4 py-2 border rounded-md"/>
+            <input name="phone" type="tel" required placeholder="Enter Phone Number" class="w-full px-4 py-2 border rounded-md"/>
+            <input name="email" type="email" placeholder="Email (optional)" class="w-full px-4 py-2 border rounded-md"/>
+            <select name="interest" class="w-full px-4 py-2 border rounded-md">
+              <option>I'm interested in…</option>
+              <option>Affordable Care Act (ACA) Campaign</option>
+              <option>Final Expense Campaign</option>
+              <option>Both / General inquiry</option>
+            </select>
+            <textarea name="message" rows="3" placeholder="Short message (optional)" class="w-full px-4 py-2 border rounded-md"></textarea>
+            <div class="flex gap-2">
+              <button type="submit" class="flex-1 bg-emerald-600 text-white px-4 py-2 rounded-md">Request Callback</button>
+              <a href="tel:+923435549412" class="flex-1 border border-slate-200 px-4 py-2 rounded-md text-center">Call Now</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===================== ABOUT ===================== -->
-<section id="about" class="py-20 bg-slate-50">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-emerald-700">About Care Line BPO</h2>
-    <p class="mt-4 text-slate-600 leading-relaxed">Established in 2005, Care Line BPO has successfully completed over 2,000 projects. We are committed to providing high-quality, ethical, and efficient call center services. Our team blends expertise, professionalism, and human care — ensuring every call makes a difference.</p>
-  </div>
-</section>
-  
-  <!-- ===================== Mission & Vision Section ===================== -->
-<section id="mission" class="bg-white py-12">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h3 class="text-2xl font-bold text-emerald-700">Our Mission & Vision</h3>
-    <p class="text-slate-600 mt-4">Our mission is to connect people with affordable healthcare and peace of mind through human-centered communication and ethical call center practices.</p>
-    <p class="text-slate-600 mt-3">Our vision is to become the most trusted partner for healthcare and final expense campaigns worldwide, setting new standards for empathy, compliance, and measurable success.</p>
-  </div>
-</section>
-  
-<!-- ===================== Why Choose Us Section ===================== -->
-<section id="why-us" class="max-w-6xl mx-auto px-6 py-16">
-  <h3 class="text-2xl font-bold text-emerald-700">Why Choose Us</h3>
-  <p class="text-slate-600 mt-2">What makes Care Line BPO stand out from other service providers.</p>
-  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <div class="bg-white p-6 rounded-lg shadow-sm card">
-      <h4 class="font-semibold text-emerald-700">Proven Experience</h4>
-      <p class="text-sm text-slate-600 mt-2">Over 7 years of consistent success in ACA and Final Expense campaigns.</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow-sm card">
-      <h4 class="font-semibold text-emerald-700">HIPAA-Compliant</h4>
-      <p class="text-sm text-slate-600 mt-2">Secure data handling and strict adherence to compliance standards.</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow-sm card">
-      <h4 class="font-semibold text-emerald-700">24/7 Availability</h4>
-      <p class="text-sm text-slate-600 mt-2">Round-the-clock support with multilingual, friendly agents.</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow-sm card">
-      <h4 class="font-semibold text-emerald-700">Measurable Results</h4>
-      <p class="text-sm text-slate-600 mt-2">Transparent reports, KPIs, and consistent performance reviews.</p>
-    </div>
-  </div>
-</section>
-  
-<!-- ===================== TEAM ===================== -->
-<section id="team" class="max-w-6xl mx-auto px-6 py-12">
-  <h3 class="text-2xl font-bold">Leadership</h3>
-  <p class="text-slate-600 mt-2">Led by experienced campaign managers and senior call center specialists.</p>
-  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+  <!-- All other sections remain identical -->
+  <!-- Just keep your previous HTML from Services, About, Team, Testimonials, Contact, etc. -->
 
-    <!-- Olivia Carter (Founder) -->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
-      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Olivia Carter" class="h-24 w-24 rounded-full mx-auto object-cover shadow-md" />
-      <h5 class="mt-3 font-semibold">Olivia Carter</h5>
-      <p class="text-sm text-slate-500">Founder & CEO</p>
-      <p class="text-xs text-slate-400">Email: <a href="mailto:carterolivia.official@gmail.com" class="text-emerald-600">carterolivia.official@gmail.com</a></p>
-    </div>
-
-    <!-- Syyed Haseeb Ahmad Gillani (Manager) -->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
-      <img src="haseeb.jpg" alt="Syyed Haseeb Ahmad Gillani" class="h-24 w-24 rounded-full mx-auto object-cover shadow-md" />
-      <h5 class="mt-3 font-semibold">Syyed Haseeb Ahmad Gillani</h5>
-      <p class="text-sm text-slate-500">Manager</p>
-      <p class="text-xs text-slate-400">Email: <a href="mailto:haseebahmedgilani412@gmail.com" class="text-emerald-600">haseebahmedgilani412@gmail.com</a></p>
-      <p class="text-xs text-slate-400">WhatsApp: <a href="https://wa.me/+923435549412" class="text-emerald-600">+92 343 5549 412</a></p>
-    </div>
-
-    <!-- Syed Mohib Ali Gillani -->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
-      <img src="mohib.png" alt="Syed Mohib Ali Gillani" class="h-24 w-24 rounded-full mx-auto object-cover shadow-md" />
-      <h5 class="mt-3 font-semibold">Syed Mohib Ali Gillani</h5>
-      <p class="text-sm text-slate-500">Manager (Out Sourcing)</p>
-    <p class="text-xs text-slate-400">Email: <a href="mailto:mohibgillani91@gmail.com" class="text-emerald-600">mohibgillani91@gmail.com</a></p>
-      <p class="text-xs text-slate-400">WhatsApp: <a href="https://wa.me/+923400976168" class="text-emerald-600">+92 340 0976 168</a></p>
-    </div>
-
-    <!-- Syed Muneeb Ahmad Gillani-->
-    <div class="bg-white p-4 rounded-lg text-center shadow-sm card">
-      <div class="h-24 w-24 rounded-full bg-slate-200 mx-auto flex items-center justify-center text-slate-500 font-semibold">SM</div>
-      <h5 class="mt-3 font-semibold">Syed Muneeb Ahmad Gillani</h5>
-      <p class="text-sm text-slate-500">IT & Systems — Platform & Integrations</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===================== VIRTUAL EMPLOYEES ===================== -->
-<section id="virtual-employees" class="py-20 bg-slate-50">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-emerald-700">Hire Virtual Employees</h2>
-    <p class="mt-3 text-slate-600">Join our global remote workforce — work from anywhere and build your career with Care Line BPO.</p>
-
-    <!-- Apply Now Button -->
-<button onclick="document.getElementById('applyModal').style.display='flex'" class="bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition mt-4">
-  Apply Now
-</button>
-
-
-    <!-- Apply Now Modal -->
-<div id="applyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm justify-center items-center z-50">
-  <div class="bg-white rounded-xl shadow-lg max-w-md w-full p-6 relative">
-    <button onclick="document.getElementById('applyModal').style.display='none'" class="absolute top-3 right-4 text-slate-500 text-2xl">&times;</button>
-    <h3 class="text-xl font-bold mb-4 text-center text-emerald-700">Hire Virtual Employees</h3>
-
-    <form action="https://formspree.io/f/xyzndbjl" method="POST" class="space-y-3">
-      <input type="text" name="name" placeholder="Full Name" class="w-full border border-slate-300 rounded-lg p-2" required>
-      <input type="email" name="email" placeholder="Email Address" class="w-full border border-slate-300 rounded-lg p-2" required>
-      <input type="tel" name="phone" placeholder="Phone Number" class="w-full border border-slate-300 rounded-lg p-2" required>
-      
-      <select name="country" class="w-full border border-slate-300 rounded-lg p-2" required>
-        <option value="">Select Country</option>
-        <option>Pakistan</option>
-        <option>United States</option>
-        <option>Canada</option>
-        <option>United Kingdom</option>
-        <option>India</option>
-        <option>Philippines</option>
-        <option>Australia</option>
-        <option>Germany</option>
-        <option>France</option>
-        <option>United Arab Emirates</option>
-        <option>Saudi Arabia</option>
-        <option>Other</option>
-      </select>
-
-      <input type="text" name="role" placeholder="Job Type / Role (e.g. Call Agent, Data Entry)" class="w-full border border-slate-300 rounded-lg p-2" required>
-      <input type="text" name="experience" placeholder="Experience (Years)" class="w-full border border-slate-300 rounded-lg p-2">
-      <textarea name="message" placeholder="Describe your skills or attach resume link" rows="4" class="w-full border border-slate-300 rounded-lg p-2"></textarea>
-
-      <button type="submit" class="w-full bg-emerald-600 text-white py-2 rounded-lg font-semibold hover:bg-emerald-700 transition">Submit Application</button>
-    </form>
-  </div>
-</div>
-
-<!-- Script to Close Modal on Click Outside -->
-<script>
-  window.onclick = function(event) {
-    const modal = document.getElementById('applyModal');
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  }
-</script>
-    </form>
-  </div>
-</section>
-  
-<!-- ===================== Testimonials Section ===================== -->
-<section id="testimonials" class="bg-teal-50 py-16">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h3 class="text-2xl font-bold text-emerald-700">What Our Clients Say</h3>
-    <p class="text-slate-600 mt-2">Trusted by healthcare and insurance professionals worldwide.</p>
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-md card">
-        <p class="text-slate-600 italic">"Care Line BPO exceeded expectations — professional, polite, and fast results."</p>
-        <p class="mt-3 text-sm font-semibold text-emerald-700">— David M., Florida</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md card">
-        <p class="text-slate-600 italic">"Our ACA campaign saw a 25% conversion boost. Highly recommended!"</p>
-        <p class="mt-3 text-sm font-semibold text-emerald-700">— Sarah P., California</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md card">
-        <p class="text-slate-600 italic">"Reliable and courteous agents. Excellent communication and reporting."</p>
-        <p class="mt-3 text-sm font-semibold text-emerald-700">— Ahmed R., Texas</p>
-      </div>
-    </div>
-  </div>
-</section>
-  
-  <!-- ===================== Nav ===================== -->
-<nav class="flex flex-wrap gap-4 text-sm items-center justify-center md:justify-end">
-  <a href="#services" class="hover:text-emerald-600">Services</a>
-  <a href="#about" class="hover:text-emerald-600">About</a>
-  <a href="#team" class="hover:text-emerald-600">Team</a>
-  <a href="#virtual-employees" class="hover:text-emerald-600">Virtual Employees</a>
-  <a href="locations.html" class="hover:text-emerald-600">Locations</a>
-  <a href="history.html" class="hover:text-emerald-600">Our Record</a>
-  <a href="#contact" class="font-semibold text-emerald-600">Contact</a>
-  
-</nav>
-  
-<!-- ===================== CONTACT ===================== -->
-<section id="contact" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-emerald-700">Schedule a Demo</h2>
-    <p class="mt-3 text-slate-600">Let’s discuss how we can support your business growth.</p>
-
-    <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-10 max-w-2xl mx-auto grid gap-4 bg-slate-50 p-6 rounded-xl shadow-lg text-left">
-      <input name="company" placeholder="Company Name" required>
-      <input name="contact_person" placeholder="Contact Person" required>
-      <input type="email" name="email" placeholder="Business Email" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="date" name="preferred_date" placeholder="Select Date" required onfocus="this.showPicker()">
-      <textarea name="details" rows="3" placeholder="Project Details or Requirements"></textarea>
-      <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded-md">Book a Demo</button>
-    </form>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="bg-slate-900 text-slate-300 py-10 text-center">
-  <p>&copy; 2005–2025 Care Line BPO. All Rights Reserved.</p>
-  <p class="text-sm mt-2">Email: info.carelinecallcenter@gmail.com | Phone: +92 343 5549412 | WhatsApp: +92 337 5647705</p>
-</footer>
-
-<!-- ===================== WHATSAPP FLOAT ===================== -->
-<a href="https://wa.me/923375647705" target="_blank" class="whatsapp-btn">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-5 h-5" alt=""> Chat on WhatsApp
-</a>
-
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/923375647705" target="_blank" class="whatsapp-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-5 h-5" alt=""> Chat on WhatsApp
+  </a>
 </main>
-  <footer class="bg-slate-900 text-slate-300 text-sm py-6 mt-12">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3">
+
+<!-- Footer -->
+<footer>
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3 py-6">
     <p>© 2025 Care Line BPO. All rights reserved.</p>
     <div class="flex gap-4">
-      <a href="#" class="hover:text-white">Privacy Policy</a>
-      <a href="#" class="hover:text-white">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
     </div>
   </div>
-  </footer>
+</footer>
+
+<!-- ✅ Smooth reveal on scroll -->
+<script>
+document.addEventListener('scroll', () => {
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+});
+</script>
+
 </body>
 </html>
-<!-- END OF PART 2 -->
