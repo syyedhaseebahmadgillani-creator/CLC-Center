@@ -515,6 +515,28 @@
     btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   })();
 </script>
+  
+<script>
+  // === Floating Particles in Hero Section ===
+  const hero = document.querySelector('.hero-bg');
+  const particleCount = 25; // adjust for density
+  for (let i = 0; i < particleCount; i++) {
+    const p = document.createElement('div');
+    p.classList.add('particle');
+    const size = Math.random() * 6 + 3; // 3–9px
+    const duration = Math.random() * 8 + 6; // 6–14s
+    const delay = Math.random() * 5;
+    const left = Math.random() * 100;
+    const top = Math.random() * 100;
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    p.style.left = `${left}%`;
+    p.style.top = `${top}%`;
+    p.style.animationDuration = `${duration}s`;
+    p.style.animationDelay = `${delay}s`;
+    hero.appendChild(p);
+  }
+</script>
 
 </body>
 </html>
