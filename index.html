@@ -8,51 +8,126 @@
   <meta name="keywords" content="call center, Affordable Care Act, ACA enrollment, final expense, insurance leads, Care Line" />
   <meta name="author" content="Care Line BPO" />
 
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS (kept as requested) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom Dark Theme Styles -->
+  <!-- Your custom dark theme stylesheet (you uploaded this) -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Small inline tweaks: hero animated gradient + reveal classes + subtle dividers -->
+  <style>
+    /* Hero animated gradient (emerald <-> soft blue) */
+    .hero-gradient {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-gradient::before {
+      content: '';
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(closest-side, rgba(16,185,129,0.12), transparent 30%),
+                  linear-gradient(120deg, rgba(14,165,233,0.08), rgba(16,185,129,0.08));
+      filter: blur(50px);
+      transform: rotate(0deg);
+      animation: gradientShift 12s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+    @keyframes gradientShift {
+      0% { transform: translateX(-10%) translateY(-5%) rotate(0deg) scale(1); }
+      50% { transform: translateX(10%) translateY(5%) rotate(10deg) scale(1.05); }
+      100% { transform: translateX(-10%) translateY(-5%) rotate(0deg) scale(1); }
+    }
+
+    /* Reveal initial state & active state */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms cubic-bezier(.2,.9,.2,1), transform 700ms cubic-bezier(.2,.9,.2,1);
+      will-change: transform, opacity;
+    }
+    .reveal-active {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Section divider glow */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(52,211,153,0.12), rgba(14,165,233,0.08), rgba(255,255,255,0.02));
+      margin: 2.25rem 0;
+    }
+
+    /* Scroll-to-top button */
+    .scroll-top {
+      position: fixed;
+      right: 18px;
+      bottom: 86px;
+      z-index: 80;
+      width: 44px;
+      height: 44px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius: 10px;
+      background: linear-gradient(135deg,#10b981,#0ea5e9);
+      box-shadow: 0 10px 30px rgba(16,185,129,0.22);
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(8px) scale(.98);
+      transition: opacity .28s ease, transform .28s ease;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Small responsive tweaks so hero text sits above gradient pseudo-element */
+    .hero-content { position: relative; z-index: 2; }
+  </style>
 </head>
 
 <body class="antialiased text-gray-200 bg-[#121212]">
 
-<!-- ===================== HEADER ===================== -->
-<header class="bg-[#1a1a1a] shadow-lg border-b border-emerald-700/30">
+<!-- ========== HEADER ========== -->
+<header class="bg-[#0f1113]/80 backdrop-blur-sm sticky top-0 z-40 border-b border-emerald-700/15">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3">
-      <img src="logo.png" alt="Care Line Call Center Logo" class="h-10 w-auto rounded-full shadow"/>
+      <img src="logo.png" alt="Care Line Call Center Logo" class="h-10 w-auto rounded-full shadow-sm"/>
       <div>
-        <div class="text-lg font-semibold text-emerald-400">Care Line Call Center</div>
+        <div class="text-lg font-semibold text-emerald-300">Care Line Call Center</div>
         <div class="text-xs text-gray-400">ACA Enrollment · Final Expense</div>
       </div>
     </a>
 
     <nav class="hidden md:flex gap-6 text-sm items-center">
-      <a href="#services" class="hover:text-emerald-400">Services</a>
-      <a href="#about" class="hover:text-emerald-400">About</a>
-      <a href="#team" class="hover:text-emerald-400">Team</a>
-      <a href="#virtual-employees" class="hover:text-emerald-400">Virtual Employees</a>
-      <a href="locations.html" class="hover:text-emerald-400">Locations</a>
-      <a href="history.html" class="hover:text-emerald-400">Our Record</a>
-      <a href="#contact" class="font-semibold text-emerald-400">Contact</a>
+      <a href="#services" class="hover:text-emerald-300 transition">Services</a>
+      <a href="#about" class="hover:text-emerald-300 transition">About</a>
+      <a href="#team" class="hover:text-emerald-300 transition">Team</a>
+      <a href="#virtual-employees" class="hover:text-emerald-300 transition">Virtual Employees</a>
+      <a href="locations.html" class="hover:text-emerald-300 transition">Locations</a>
+      <a href="history.html" class="hover:text-emerald-300 transition">Our Record</a>
+      <a href="#contact" class="font-semibold text-emerald-300">Contact</a>
     </nav>
 
     <div class="hidden md:flex items-center gap-3">
-      <a href="tel:+923435549412" class="bg-emerald-600 text-white px-4 py-2 rounded-md shadow hover:bg-emerald-500 transition">Call +92 343 5549412</a>
-      <a href="https://wa.me/923375647705" class="border border-emerald-500 text-emerald-400 px-4 py-2 rounded-md hover:bg-emerald-500 hover:text-white transition">WhatsApp</a>
+      <a href="tel:+923435549412" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-sky-500 text-white px-4 py-2 rounded-md shadow hover:opacity-95 transition">Call +92 343 5549412</a>
+      <a href="https://wa.me/923375647705" class="inline-flex items-center gap-2 border border-emerald-500 text-emerald-200 px-4 py-2 rounded-md hover:bg-emerald-600/10 transition">WhatsApp</a>
     </div>
 
+    <!-- Mobile menu button -->
     <div class="md:hidden flex items-center gap-2">
-      <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 text-emerald-400">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 text-emerald-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
         </svg>
       </button>
     </div>
   </div>
 
-  <div id="mobile-menu" class="md:hidden hidden px-6 pb-6 bg-[#1a1a1a] text-gray-300">
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-6 bg-[#0c0d0e] text-gray-300">
     <nav class="flex flex-col gap-2 text-sm">
       <a href="#services" class="block py-2">Services</a>
       <a href="#about" class="block py-2">About</a>
@@ -60,105 +135,386 @@
       <a href="#virtual-employees" class="block py-2">Virtual Employees</a>
       <a href="locations.html" class="block py-2">Locations</a>
       <a href="history.html" class="block py-2">Our Record</a>
-      <a href="#contact" class="block py-2 font-semibold text-emerald-400">Contact</a>
-      <div class="pt-3 border-t border-gray-700 mt-3">
+      <a href="#contact" class="block py-2 font-semibold text-emerald-300">Contact</a>
+      <div class="pt-3 border-t border-gray-800 mt-3">
         <a href="tel:+923435549412" class="block py-2">Call +92 343 5549412</a>
         <a href="https://wa.me/923375647705" class="block py-2">WhatsApp</a>
       </div>
     </nav>
   </div>
+</header>
 
-  <script>
+<script>
+  // Mobile menu toggle
+  (function () {
     const btn = document.getElementById('mobile-menu-button');
     const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => {
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function () {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!expanded));
       menu.classList.toggle('hidden');
     });
-  </script>
-</header>
+  })();
+</script>
 
 <main>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero-bg text-white" data-reveal>
-  <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
-    <div class="md:w-1/2">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Care Line Call BPO" class="h-16 w-16 rounded-full shadow-md"/>
-        <h1 class="text-4xl font-bold text-emerald-400">Care Line BPO</h1>
+  <!-- HERO with animated subtle gradient -->
+  <section class="hero-gradient relative overflow-hidden" data-reveal>
+    <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12 hero-content">
+      <!-- Left column -->
+      <div class="md:w-1/2">
+        <div class="flex items-center gap-3">
+          <img src="logo.png" alt="Care Line Call BPO" class="h-16 w-16 rounded-full shadow-md"/>
+          <h1 class="text-4xl font-bold text-emerald-200">Care Line BPO</h1>
+        </div>
+        <p class="mt-4 text-lg text-gray-300 leading-relaxed">Specialized, compliant call center services for Affordable Care Act enrollments and Final Expense campaigns. Trusted since 2005 with over 2,000 successful projects.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#contact" class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-6 py-3 rounded-full font-semibold shadow hover:scale-[1.02] transition">Request a Demo</a>
+          <a href="#services" class="inline-flex items-center gap-3 border border-emerald-500 text-emerald-200 px-6 py-3 rounded-full hover:bg-emerald-600/10 transition">Our Services</a>
+        </div>
       </div>
-      <p class="mt-4 text-lg text-gray-300">Specialized, compliant call center services for Affordable Care Act enrollments and Final Expense campaigns. Trusted since 2005 with over 2,000 successful projects.</p>
-      <div class="mt-6 flex gap-3">
-        <a href="#contact" class="bg-emerald-600 text-white px-6 py-3 rounded-md font-semibold shadow hover:bg-emerald-500 transition">Request a Demo</a>
-        <a href="#services" class="border border-emerald-500 text-emerald-400 px-6 py-3 rounded-md hover:bg-emerald-500 hover:text-white transition">Our Services</a>
+
+      <!-- Right column - quick contact card -->
+      <div class="md:w-1/2">
+        <div class="bg-[#0f1113] border border-emerald-700/6 rounded-2xl p-6 shadow-xl card">
+          <h3 class="text-emerald-300 font-semibold">Quick Contact</h3>
+          <p class="text-sm text-gray-400">Leave your details and we’ll call within one business day.</p>
+          <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-4 grid gap-3">
+            <input name="name" required placeholder="Full Name" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
+            <input name="phone" required type="tel" placeholder="Phone Number" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
+            <input name="email" type="email" placeholder="Email (optional)" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
+            <select name="interest" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200">
+              <option>I'm interested in…</option>
+              <option>Affordable Care Act (ACA) Campaign</option>
+              <option>Final Expense Campaign</option>
+              <option>Both / General inquiry</option>
+            </select>
+            <textarea name="message" rows="3" placeholder="Short message (optional)" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200"></textarea>
+            <div class="flex gap-2">
+              <button type="submit" class="flex-1 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-4 py-2 rounded-md shadow hover:opacity-95 transition">Request Callback</button>
+              <a href="tel:+923435549412" class="flex-1 inline-flex items-center justify-center border border-gray-700 px-4 py-2 rounded-md text-gray-300 hover:bg-gray-800 transition">Call Now</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- subtle divider bottom -->
+    <div class="divider"></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-16 bg-[#0e1012]" data-reveal>
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-emerald-300">Our Core Services</h2>
+      <p class="mt-3 text-gray-400">Providing reliable call center solutions trusted since 2005.</p>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-8">
+        <div class="card bg-[#0f1113] p-6 rounded-xl shadow hover:shadow-emerald-600/20">
+          <h3 class="text-xl font-semibold text-emerald-300">Affordable Care Act (ACA)</h3>
+          <p class="mt-2 text-gray-300">Expert tele-agents trained in ACA enrollment and compliance. We ensure accurate data collection, lead management, and client satisfaction.</p>
+        </div>
+
+        <div class="card bg-[#0f1113] p-6 rounded-xl shadow hover:shadow-sky-500/12">
+          <h3 class="text-xl font-semibold text-emerald-300">Final Expense Campaigns</h3>
+          <p class="mt-2 text-gray-300">Experienced agents handling life insurance and final expense lead generation with empathy and professionalism.</p>
+        </div>
       </div>
     </div>
 
-    <div class="md:w-1/2">
-      <div class="bg-[#1e1e1e] rounded-2xl p-6 shadow-xl card">
-        <h3 class="text-emerald-400 font-semibold">Quick Contact</h3>
-        <p class="text-sm text-gray-400">Leave your details and we’ll call within one business day.</p>
-        <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-4 grid gap-3">
-          <input name="name" required placeholder="Full Name" class="w-full px-4 py-2 border rounded-md bg-[#121212] border-gray-700 text-gray-200"/>
-          <input name="phone" type="tel" required placeholder="Phone Number" class="w-full px-4 py-2 border rounded-md bg-[#121212] border-gray-700 text-gray-200"/>
-          <input name="email" type="email" placeholder="Email (optional)" class="w-full px-4 py-2 border rounded-md bg-[#121212] border-gray-700 text-gray-200"/>
-          <select name="interest" class="w-full px-4 py-2 border rounded-md bg-[#121212] border-gray-700 text-gray-200">
-            <option>I'm interested in…</option>
-            <option>Affordable Care Act (ACA) Campaign</option>
-            <option>Final Expense Campaign</option>
-            <option>Both / General inquiry</option>
-          </select>
-          <textarea name="message" rows="3" placeholder="Short message (optional)" class="w-full px-4 py-2 border rounded-md bg-[#121212] border-gray-700 text-gray-200"></textarea>
-          <button type="submit" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-md">Request Callback</button>
-        </form>
+    <div class="divider"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-16 bg-[#0c0d0e]" data-reveal>
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-emerald-300">About Care Line BPO</h2>
+      <p class="mt-4 text-gray-400 leading-relaxed">Established in 2005, Care Line BPO has successfully completed over 2,000 projects. We are committed to providing high-quality, ethical, and efficient call center services. Our team blends expertise, professionalism, and human care — ensuring every call makes a difference.</p>
+      <div class="mt-6 text-gray-300">
+        <p><strong>Years of experience:</strong> 2005–Present</p>
+        <p><strong>Specialties:</strong> ACA enrollment campaigns, Final Expense lead generation, HIPAA-compliant operations.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ===================== SERVICES ===================== -->
-<section id="services" class="py-20 bg-[#1a1a1a]" data-reveal>
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-emerald-400">Our Core Services</h2>
-    <p class="mt-3 text-gray-400">Providing reliable call center solutions trusted since 2005.</p>
-    <div class="mt-10 grid md:grid-cols-2 gap-8">
-      <div class="card bg-[#121212] p-6 rounded-xl shadow hover:shadow-emerald-600/30">
-        <h3 class="text-xl font-semibold text-emerald-400">Affordable Care Act (ACA)</h3>
-        <p class="mt-2 text-gray-300">Expert tele-agents trained in ACA enrollment and compliance.</p>
-      </div>
-      <div class="card bg-[#121212] p-6 rounded-xl shadow hover:shadow-emerald-600/30">
-        <h3 class="text-xl font-semibold text-emerald-400">Final Expense Campaigns</h3>
-        <p class="mt-2 text-gray-300">Experienced agents handling life insurance and final expense lead generation.</p>
+    <div class="divider"></div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section id="mission" class="py-12 bg-[#0f1113]" data-reveal>
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold text-emerald-300">Our Mission & Vision</h3>
+      <p class="text-gray-400 mt-4">Our mission is to connect people with affordable healthcare and peace of mind through human-centered communication and ethical call center practices.</p>
+      <p class="text-gray-400 mt-3">Our vision is to become the most trusted partner for healthcare and final expense campaigns worldwide, setting new standards for empathy, compliance, and measurable success.</p>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us" class="py-16 bg-[#0c0d0e]" data-reveal>
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-2xl font-bold text-emerald-300">Why Choose Us</h3>
+      <p class="text-gray-400 mt-2">What makes Care Line BPO stand out from other service providers.</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
+          <h4 class="font-semibold text-emerald-300">Proven Experience</h4>
+          <p class="text-sm text-gray-300 mt-2">Over 7 years of consistent success in ACA and Final Expense campaigns.</p>
+        </div>
+
+        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
+          <h4 class="font-semibold text-emerald-300">HIPAA-Compliant</h4>
+          <p class="text-sm text-gray-300 mt-2">Secure data handling and strict adherence to compliance standards.</p>
+        </div>
+
+        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
+          <h4 class="font-semibold text-emerald-300">24/7 Availability</h4>
+          <p class="text-sm text-gray-300 mt-2">Round-the-clock support with multilingual, friendly agents.</p>
+        </div>
+
+        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
+          <h4 class="font-semibold text-emerald-300">Measurable Results</h4>
+          <p class="text-sm text-gray-300 mt-2">Transparent reports, KPIs, and consistent performance reviews.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="divider"></div>
+  </section>
 
-<!-- other sections continue unchanged but with data-reveal added -->
-<!-- ===================== ABOUT ===================== -->
-<section id="about" class="py-20 bg-[#121212]" data-reveal> ... </section>
+  <!-- TEAM -->
+  <section id="team" class="py-16 bg-[#0e1012]" data-reveal>
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold text-emerald-300">Leadership</h3>
+      <p class="text-gray-400 mt-2">Led by experienced campaign managers and senior call center specialists.</p>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="bg-[#0d0d0d] text-gray-400 py-10 text-center" data-reveal>
-  <p>&copy; 2005–2025 Care Line BPO. All Rights Reserved.</p>
-  <p class="text-sm mt-2">Email: info.carelinecallcenter@gmail.com | Phone: +92 343 5549412 | WhatsApp: +92 337 5647705</p>
-</footer>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Olivia Carter -->
+        <div class="bg-[#0f1113] p-4 rounded-lg text-center shadow-sm card">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Olivia Carter" class="h-24 w-24 rounded-full mx-auto object-cover shadow-md" />
+          <h5 class="mt-3 font-semibold text-gray-200">Olivia Carter</h5>
+          <p class="text-sm text-gray-400">Founder & CEO</p>
+          <p class="text-xs text-gray-500 mt-2">Email: <a href="mailto:carterolivia.official@gmail.com" class="text-emerald-300">carterolivia.official@gmail.com</a></p>
+        </div>
 
-<!-- Reveal Animation Script -->
-<script>
-  const reveals = document.querySelectorAll("[data-reveal]");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("reveal-active");
+        <!-- Syyed Haseeb Ahmad Gillani -->
+        <div class="bg-[#0f1113] p-4 rounded-lg text-center shadow-sm card">
+          <img src="haseeb.jpg" alt="Syyed Haseeb Ahmad Gillani" class="h-24 w-24 rounded-full mx-auto object-cover shadow-md" />
+          <h5 class="mt-3 font-semibold text-gray-200">Syyed Haseeb Ahmad Gillani</h5>
+          <p class="text-sm text-gray-400">Manager</p>
+          <p class="text-xs text-gray-500 mt-2">Email: <a href="mailto:haseebahmedgilani412@gmail.com" class="text-emerald-300">haseebahmedgilani412@gmail.com</a></p>
+          <p class="text-xs text-gray-500">WhatsApp: <a href="https://wa.me/+923435549412" class="text-emerald-300">+92 343 5549 412</a></p>
+        </div>
+
+        <!-- Syed Mohib Ali Gillani -->
+        <div class="bg-[#0f1113] p-4 rounded-lg text-center shadow-sm card">
+          <img src="mohib.png" alt="Syed Mohib Ali Gillani" class="h-24 w-24 rounded-full mx-auto object-cover shadow-md" />
+          <h5 class="mt-3 font-semibold text-gray-200">Syed Mohib Ali Gillani</h5>
+          <p class="text-sm text-gray-400">Manager (Out Sourcing)</p>
+          <p class="text-xs text-gray-500 mt-2">Email: <a href="mailto:mohibgillani91@gmail.com" class="text-emerald-300">mohibgillani91@gmail.com</a></p>
+          <p class="text-xs text-gray-500">WhatsApp: <a href="https://wa.me/+923400976168" class="text-emerald-300">+92 340 0976 168</a></p>
+        </div>
+
+        <!-- Syed Muneeb Ahmad Gillani -->
+        <div class="bg-[#0f1113] p-4 rounded-lg text-center shadow-sm card">
+          <div class="h-24 w-24 rounded-full bg-gray-800 mx-auto flex items-center justify-center text-gray-500 font-semibold">SM</div>
+          <h5 class="mt-3 font-semibold text-gray-200">Syed Muneeb Ahmad Gillani</h5>
+          <p class="text-sm text-gray-400">IT & Systems — Platform & Integrations</p>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- VIRTUAL EMPLOYEES -->
+  <section id="virtual-employees" class="py-16 bg-[#0c0d0e]" data-reveal>
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-emerald-300">Hire Virtual Employees</h2>
+      <p class="mt-3 text-gray-400">Join our global remote workforce — work from anywhere and build your career with Care Line BPO.</p>
+
+      <div class="mt-6">
+        <button id="applyNow" class="bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-6 py-3 rounded-full font-semibold shadow hover:scale-[1.02] transition">Apply Now</button>
+      </div>
+
+      <!-- Modal (hidden by default) -->
+      <div id="applyModal" class="fixed inset-0 hidden items-center justify-center z-50 bg-black/50 p-4">
+        <div class="w-full max-w-lg bg-[#0f1113] rounded-xl p-6 border border-emerald-700/6 shadow-lg">
+          <button id="closeApply" class="text-gray-400 absolute top-6 right-6 text-2xl">&times;</button>
+          <h3 class="text-xl font-bold text-emerald-300 mb-3 text-center">Hire Virtual Employees</h3>
+
+          <form action="https://formspree.io/f/xyzndbjl" method="POST" class="space-y-3">
+            <input type="text" name="name" placeholder="Full Name" class="w-full border border-gray-800 rounded-md p-2 bg-[#0b0c0d] text-gray-200" required>
+            <input type="email" name="email" placeholder="Email Address" class="w-full border border-gray-800 rounded-md p-2 bg-[#0b0c0d] text-gray-200" required>
+            <input type="tel" name="phone" placeholder="Phone Number" class="w-full border border-gray-800 rounded-md p-2 bg-[#0b0c0d] text-gray-200" required>
+
+            <select name="country" class="w-full border border-gray-800 rounded-md p-2 bg-[#0b0c0d] text-gray-200" required>
+              <option value="">Select Country</option>
+              <option>Pakistan</option><option>United States</option><option>Canada</option><option>United Kingdom</option><option>India</option><option>Philippines</option><option>Australia</option><option>Germany</option><option>France</option><option>United Arab Emirates</option><option>Saudi Arabia</option><option>Other</option>
+            </select>
+
+            <input type="text" name="role" placeholder="Job Type / Role (eg. Call Agent)" class="w-full border border-gray-800 rounded-md p-2 bg-[#0b0c0d] text-gray-200" required>
+            <input type="text" name="experience" placeholder="Experience (Years)" class="w-full border border-gray-800 rounded-md p-2 bg-[#0b0c0d] text-gray-200">
+            <textarea name="message" placeholder="Describe your skills or attach resume link" rows="4" class="w-full border border-gray-800 rounded-md p-2 bg-[#0b0c0d] text-gray-200"></textarea>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-sky-500 text-white py-2 rounded-lg font-semibold hover:opacity-95 transition">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <script>
+    // Apply Modal open/close
+    (function () {
+      const applyBtn = document.getElementById('applyNow');
+      const applyModal = document.getElementById('applyModal');
+      const closeApply = document.getElementById('closeApply');
+
+      if (applyBtn && applyModal) {
+        applyBtn.addEventListener('click', () => {
+          applyModal.classList.remove('hidden');
+          applyModal.classList.add('flex');
+        });
       }
-    });
-  }, { threshold: 0.2 });
-  reveals.forEach((el) => observer.observe(el));
-</script>
+      if (closeApply) {
+        closeApply.addEventListener('click', () => {
+          applyModal.classList.add('hidden');
+          applyModal.classList.remove('flex');
+        });
+      }
+      // close on click outside
+      window.addEventListener('click', (e) => {
+        if (e.target === applyModal) {
+          applyModal.classList.add('hidden'); applyModal.classList.remove('flex');
+        }
+      });
+    })();
+  </script>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-16 bg-[#0e1012]" data-reveal>
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-bold text-emerald-300">What Our Clients Say</h3>
+      <p class="text-gray-400 mt-2">Trusted by healthcare and insurance professionals worldwide.</p>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-[#0f1113] p-6 rounded-lg shadow-md card">
+          <p class="text-gray-300 italic">"Care Line BPO exceeded expectations — professional, polite, and fast results."</p>
+          <p class="mt-3 text-sm font-semibold text-emerald-300">— David M., Florida</p>
+        </div>
+
+        <div class="bg-[#0f1113] p-6 rounded-lg shadow-md card">
+          <p class="text-gray-300 italic">"Our ACA campaign saw a 25% conversion boost. Highly recommended!"</p>
+          <p class="mt-3 text-sm font-semibold text-emerald-300">— Sarah P., California</p>
+        </div>
+
+        <div class="bg-[#0f1113] p-6 rounded-lg shadow-md card">
+          <p class="text-gray-300 italic">"Reliable and courteous agents. Excellent communication and reporting."</p>
+          <p class="mt-3 text-sm font-semibold text-emerald-300">— Ahmed R., Texas</p>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- CONTACT (detailed form) -->
+  <section id="contact" class="py-16 bg-[#0c0d0e]" data-reveal>
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-emerald-300">Schedule a Demo</h2>
+      <p class="mt-3 text-gray-400">Let’s discuss how we can support your business growth.</p>
+
+      <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-8 grid gap-4 bg-[#0f1113] p-6 rounded-xl shadow-lg text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input name="company" placeholder="Company Name" required class="w-full p-3 rounded-md bg-[#0b0c0d] border border-gray-800 text-gray-200" />
+          <input name="contact_person" placeholder="Contact Person" required class="w-full p-3 rounded-md bg-[#0b0c0d] border border-gray-800 text-gray-200" />
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="email" name="email" placeholder="Business Email" required class="w-full p-3 rounded-md bg-[#0b0c0d] border border-gray-800 text-gray-200" />
+          <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 rounded-md bg-[#0b0c0d] border border-gray-800 text-gray-200" />
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="date" name="preferred_date" placeholder="Select Date" required onfocus="this.showPicker()" class="w-full p-3 rounded-md bg-[#0b0c0d] border border-gray-800 text-gray-200" />
+          <select name="service_interest" class="w-full p-3 rounded-md bg-[#0b0c0d] border border-gray-800 text-gray-200">
+            <option value="">Service of interest</option>
+            <option>ACA Campaign</option>
+            <option>Final Expense</option>
+            <option>Virtual Staff</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+
+        <textarea name="details" rows="4" placeholder="Project Details or Requirements" class="w-full p-3 rounded-md bg-[#0b0c0d] border border-gray-800 text-gray-200"></textarea>
+
+        <div class="flex items-center gap-4">
+          <button type="submit" class="bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-4 py-2 rounded-md shadow hover:opacity-95 transition">Book a Demo</button>
+          <a href="tel:+923435549412" class="inline-flex items-center gap-2 border border-gray-700 px-4 py-2 rounded-md text-gray-300 hover:bg-gray-800 transition">Call Us</a>
+        </div>
+      </form>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#060708] text-gray-400 py-10 text-center" data-reveal>
+    <div class="max-w-6xl mx-auto px-6">
+      <p>&copy; 2005–2025 Care Line BPO. All Rights Reserved.</p>
+      <p class="text-sm mt-2">Email: info.carelinecallcenter@gmail.com | Phone: +92 343 5549412 | WhatsApp: +92 337 5647705</p>
+      <div class="mt-4 flex items-center justify-center gap-4">
+        <a href="#" class="text-gray-400 hover:text-emerald-300">Privacy Policy</a>
+        <a href="#" class="text-gray-400 hover:text-emerald-300">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
 
 </main>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/923375647705" target="_blank" class="whatsapp-btn fixed right-4 bottom-4 z-50 flex items-center gap-3 px-4 py-3 rounded-full shadow-lg">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-5 h-5" alt="WhatsApp">
+  <span class="hidden sm:inline text-sm font-medium">Chat on WhatsApp</span>
+</a>
+
+<!-- Scroll-to-top button -->
+<button id="scrollTop" aria-label="Scroll to top" class="scroll-top" title="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</button>
+
+<!-- Reveal & interactions script -->
+<script>
+  // IntersectionObserver reveal for elements with [data-reveal]
+  (function () {
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    if (!revealEls.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-active');
+          // optional: unobserve to avoid repeated triggers
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    revealEls.forEach(el => observer.observe(el));
+  })();
+
+  // Scroll to top button visibility and action
+  (function () {
+    const btn = document.getElementById('scrollTop');
+    const showAfter = 300; // px scrolled
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > showAfter) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  })();
+</script>
+
 </body>
 </html>
