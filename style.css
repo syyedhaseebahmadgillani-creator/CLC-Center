@@ -223,3 +223,42 @@ h2 {
     filter: blur(35px);
   }
 }
+/* =============================
+   Glowing Button Hover Effect
+   ============================= */
+button,
+a.bg-emerald-600,
+a.border-emerald-500 {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Soft glowing aura when hovered */
+button::before,
+a.bg-emerald-600::before,
+a.border-emerald-500::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(16,185,129,0.25), rgba(14,165,233,0.15), transparent 70%);
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+/* Activate glow on hover */
+button:hover::before,
+a.bg-emerald-600:hover::before,
+a.border-emerald-500:hover::before {
+  opacity: 1;
+  animation: buttonGlow 3s ease-in-out infinite;
+}
+
+/* Gentle pulsation */
+@keyframes buttonGlow {
+  0%, 100% { opacity: 0.6; filter: blur(15px); }
+  50% { opacity: 1; filter: blur(25px); }
+}
