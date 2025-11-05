@@ -1,0 +1,165 @@
+/* =========================
+   Modern Dark Theme - Care Line BPO
+   Inspired by Cosix Digital, styled for dark elegance
+   ========================= */
+
+body {
+  background-color: #121212;
+  color: #e2e8f0;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Header & Navbar */
+header {
+  background-color: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+header a {
+  color: #cbd5e1;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: #34d399; /* emerald accent */
+}
+
+/* Hero Section */
+.hero-bg {
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+  color: #fff;
+  box-shadow: 0 0 60px rgba(16, 185, 129, 0.25);
+}
+
+.hero-bg p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Cards */
+.card {
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+}
+
+/* Section backgrounds */
+section {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+section.bg-white,
+section.bg-slate-50 {
+  background-color: #181818 !important;
+}
+
+section.bg-teal-50 {
+  background-color: #1a1a1a !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  color: #ffffff;
+}
+
+/* Text subtle tone */
+p, li {
+  color: #cbd5e1;
+}
+
+/* Accent text */
+.text-emerald-700,
+.text-emerald-600 {
+  color: #34d399 !important;
+}
+
+/* Buttons */
+button, .btn, .bg-emerald-600, .whatsapp-btn, a.bg-emerald-600 {
+  background: linear-gradient(135deg, #10b981, #0ea5e9);
+  color: #fff !important;
+  border: none;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25);
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover, a.bg-emerald-600:hover {
+  background: linear-gradient(135deg, #0ea5e9, #10b981);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.35);
+}
+
+/* Inputs, textareas, selects */
+input, textarea, select {
+  background-color: #1f2937 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Footer */
+footer {
+  background-color: #0f0f0f !important;
+  color: #94a3b8;
+}
+
+footer a:hover {
+  color: #34d399;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background: linear-gradient(135deg, #10b981, #0ea5e9);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 35px rgba(14, 165, 233, 0.4);
+}
+
+/* Smooth animations */
+a, button, .card, .whatsapp-btn {
+  transition: all 0.25s ease;
+}
+
+/* Scroll reveal animation */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-reveal].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Highlight for active nav item */
+nav a.font-semibold {
+  color: #34d399 !important;
+}
