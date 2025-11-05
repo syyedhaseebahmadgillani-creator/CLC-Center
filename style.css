@@ -406,3 +406,24 @@ section::after {
     opacity: 0.2;
   }
 }
+/* =============================
+   Subtle Particle Sparkle Effect
+   ============================= */
+@keyframes sparkle {
+  0%, 90%, 100% {
+    opacity: inherit;
+    filter: brightness(1);
+  }
+  95% {
+    opacity: 1;
+    filter: brightness(3);
+  }
+}
+
+/* Randomly sparkle a few particles */
+.particle:nth-child(5n) {
+  animation-name: floatParticle, sparkle;
+  animation-duration: 10s, 3s;
+  animation-delay: 0s, 2s;
+  animation-iteration-count: infinite, infinite;
+}
