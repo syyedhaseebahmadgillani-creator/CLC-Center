@@ -124,24 +124,28 @@ input:focus, select:focus, textarea:focus {
   z-index: 0;
   pointer-events: none;
 }
-@keyframes gradientShift {
-  0% { transform: translateX(-10%) translateY(-5%) rotate(0deg) scale(1); }
-  50% { transform: translateX(10%) translateY(5%) rotate(10deg) scale(1.05); }
-  100% { transform: translateX(-10%) translateY(-5%) rotate(0deg) scale(1); }
-}
 
-/* WhatsApp floating button */
-.whatsapp-btn {
-  background: linear-gradient(135deg, var(--emerald), var(--blue));
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 0 0 15px rgba(16,185,129,0.3);
-  transition: all 0.3s ease;
-}
-.whatsapp-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(14,165,233,0.35);
+@keyframes floatParticle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(10px, -10px) scale(1.05);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-15px, -20px) scale(1.1);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(10px, -10px) scale(1.05);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
 }
 
 /* Scroll-to-top button fallback */
