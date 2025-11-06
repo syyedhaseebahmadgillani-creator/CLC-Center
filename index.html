@@ -813,31 +813,41 @@
     })();
   </script>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="py-16 bg-[#0e1012]" data-reveal>
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h3 class="text-2xl font-bold text-emerald-300">What Our Clients Say</h3>
-      <p class="text-gray-400 mt-2">Trusted by healthcare and insurance professionals worldwide.</p>
+ <!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="py-20 soft-gradient relative overflow-hidden" data-reveal>
+  <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
 
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-[#0f1113] p-6 rounded-lg shadow-md card">
-          <p class="text-gray-300 italic">"Multidials Solution exceeded expectations — professional, polite, and fast results."</p>
-          <p class="mt-3 text-sm font-semibold text-emerald-300">— David M., Florida</p>
-        </div>
+    <h3 class="text-4xl font-bold text-emerald-300">What Our Clients Say</h3>
+    <p class="text-gray-400 mt-3 leading-relaxed">
+      Globally trusted by insurance agencies, healthcare providers, and enterprise-level BPO partners.
+    </p>
 
-        <div class="bg-[#0f1113] p-6 rounded-lg shadow-md card">
-          <p class="text-gray-300 italic">"Our ACA campaign saw a 25% conversion boost. Highly recommended!"</p>
-          <p class="mt-3 text-sm font-semibold text-emerald-300">— Sarah P., California</p>
-        </div>
+    <!-- Testimonial cards dynamically injected here -->
+    <div id="testimonialList" class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
 
-        <div class="bg-[#0f1113] p-6 rounded-lg shadow-md card">
-          <p class="text-gray-300 italic">"Reliable and courteous agents. Excellent communication and reporting."</p>
-          <p class="mt-3 text-sm font-semibold text-emerald-300">— Ahmed R., Texas</p>
-        </div>
-      </div>
+    <!-- Submit Testimonial Form -->
+    <div class="mt-16 bg-[#0f1113]/80 backdrop-blur-lg p-8 rounded-2xl shadow-xl max-w-xl mx-auto border border-emerald-700/10 card">
+      <h4 class="text-xl font-semibold text-emerald-300 mb-4">Share Your Experience</h4>
+
+      <form id="testimonialForm" class="grid gap-4">
+        <input type="text" id="name" placeholder="Full Name" required class="input-field" />
+        <input type="text" id="location" placeholder="City, State / Country" required class="input-field" />
+        <textarea id="message" rows="3" placeholder="Write your testimonial..." required class="input-field"></textarea>
+
+        <button
+          type="submit"
+          class="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:scale-[1.04] transition shadow-lg">
+          Submit Testimonial
+        </button>
+      </form>
+
+      <p id="submitted" class="text-emerald-300 mt-4 hidden">✅ Thank you! Your testimonial has been submitted.</p>
     </div>
-    <div class="divider"></div>
-  </section>
+  </div>
+
+  <div class="divider"></div>
+</section>
+
 
   <!-- CONTACT (detailed form) -->
   <section id="contact" class="py-16 bg-[#0c0d0e]" data-reveal>
