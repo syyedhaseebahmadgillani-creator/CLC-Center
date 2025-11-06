@@ -7,114 +7,123 @@
   <meta name="description" content="Find Care Line Call Center offices and contact information for our global locations." />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-    .card{transition:transform .2s ease,box-shadow .2s ease}
-    .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,.1)}
+    /* Base Styles */
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    .card {
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    }
   </style>
 </head>
-<body class="antialiased text-slate-800 bg-slate-50">
+
+<body class="antialiased text-slate-100 bg-slate-950">
 
 <!-- Header -->
-<header class="bg-white shadow-sm">
+<header class="bg-slate-900/90 backdrop-blur border-b border-slate-800">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3">
-      <img src="logo.png" alt="Care Line Call Center Logo" class="h-10 w-auto rounded-full shadow"/>
+      <img src="logo.png" alt="Care Line Call Center Logo" class="h-10 w-auto rounded-full shadow-lg"/>
       <div>
-        <div class="text-lg font-semibold">Care Line Call Center</div>
-        <div class="text-xs text-slate-500">ACA Enrollment · Final Expense</div>
+        <div class="text-lg font-semibold text-white">Care Line Call Center</div>
+        <div class="text-xs text-slate-400">ACA Enrollment · Final Expense</div>
       </div>
     </a>
-    <nav class="hidden md:flex gap-6 text-sm items-center">
-      <a href="index.html#services" class="hover:text-emerald-600">Services</a>
-      <a href="index.html#about" class="hover:text-emerald-600">About</a>
-      <a href="index.html#team" class="hover:text-emerald-600">Team</a>
-      <a href="index.html#virtual-employees" class="hover:text-emerald-600">Virtual Employees</a>
-      <a href="locations.html" class="font-semibold text-emerald-600">Locations</a>
-      <a href="index.html#contact" class="hover:text-emerald-600">Contact</a>
+    <nav class="hidden md:flex gap-6 text-sm items-center text-slate-300">
+      <a href="index.html#services" class="hover:text-emerald-400">Services</a>
+      <a href="index.html#about" class="hover:text-emerald-400">About</a>
+      <a href="index.html#team" class="hover:text-emerald-400">Team</a>
+      <a href="index.html#virtual-employees" class="hover:text-emerald-400">Virtual Employees</a>
+      <a href="locations.html" class="font-semibold text-emerald-400">Locations</a>
+      <a href="index.html#contact" class="hover:text-emerald-400">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- LOCATIONS PAGE -->
-<main class="py-20">
+<!-- Hero Gradient -->
+<section class="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white py-20 shadow-lg">
   <div class="max-w-6xl mx-auto px-6 text-center">
-    <h1 class="text-4xl font-bold text-emerald-700">Our Offices</h1>
-    <p class="mt-3 text-slate-600">We’re proud to serve clients around the world. Contact any of our regional offices below.</p>
+    <h1 class="text-4xl font-bold">Our Offices</h1>
+    <p class="mt-4 text-slate-100/90 max-w-2xl mx-auto">
+      We’re proud to serve clients around the world. Contact any of our regional offices below.
+    </p>
+  </div>
+</section>
 
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      
+<!-- Main -->
+<main class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Offices Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
 
       <!-- USA -->
-<div class="card bg-white rounded-xl shadow-sm overflow-hidden text-left">
-  <img src="usa.jpg"
-       alt="Care Line Call Center USA Office"
-       class="w-full h-48 object-cover"
-       loading="lazy"
-       onerror="this.onerror=null;this.src='https://via.placeholder.com/800x480?text=USA+Office';">
-  <div class="p-6">
-    <h2 class="text-xl font-semibold text-emerald-700">United States (Head Office)</h2>
-    <p class="mt-2 text-slate-600">
-      Care Line Call Center<br>
-      Orlando, Florida, USA
-    </p>
-    <p class="mt-2 text-sm text-slate-500">
-      Phone: +1 (321) 555-8920<br>
-      Email: usa.carelinecallcenter@gmail.com
-    </p>
-  </div>
-</div>
+      <div class="card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden text-left">
+        <img src="usa.jpg" alt="Care Line Call Center USA Office"
+             class="w-full h-48 object-cover opacity-90"
+             onerror="this.onerror=null;this.src='https://via.placeholder.com/800x480?text=USA+Office';">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-emerald-400">United States (Head Office)</h2>
+          <p class="mt-2 text-slate-300">
+            Care Line Call Center<br>Orlando, Florida, USA
+          </p>
+          <p class="mt-2 text-sm text-slate-500">
+            Phone: +1 (321) 555-8920<br>Email: usa.carelinecallcenter@gmail.com
+          </p>
+        </div>
+      </div>
 
-<!-- UK -->
-<div class="card bg-white rounded-xl shadow-sm overflow-hidden text-left">
-  <img src="uk.jpg"
-       alt="Care Line Call Center UK Office"
-       class="w-full h-48 object-cover"
-       loading="lazy"
-       onerror="this.onerror=null;this.src='https://via.placeholder.com/800x480?text=UK+Office';">
-  <div class="p-6">
-    <h2 class="text-xl font-semibold text-emerald-700">United Kingdom Office</h2>
-    <p class="mt-2 text-slate-600">
-      Care Line Call Center<br>
-      Manchester, England
-    </p>
-    <p class="mt-2 text-sm text-slate-500">
-      Phone: +44 20 7946 0123<br>
-      Email: uk.carelinecallcenter@gmail.com
-    </p>
-  </div>
-</div>
+      <!-- UK -->
+      <div class="card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden text-left">
+        <img src="uk.jpg" alt="Care Line Call Center UK Office"
+             class="w-full h-48 object-cover opacity-90"
+             onerror="this.onerror=null;this.src='https://via.placeholder.com/800x480?text=UK+Office';">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-emerald-400">United Kingdom Office</h2>
+          <p class="mt-2 text-slate-300">
+            Care Line Call Center<br>Manchester, England
+          </p>
+          <p class="mt-2 text-sm text-slate-500">
+            Phone: +44 20 7946 0123<br>Email: uk.carelinecallcenter@gmail.com
+          </p>
+        </div>
+      </div>
 
-<!-- Pakistan -->
-<div class="card bg-white rounded-xl shadow-sm overflow-hidden text-left">
-  <img src="pakistan.jpg"
-       alt="Care Line Call Center Pakistan Office"
-       class="w-full h-48 object-cover"
-       loading="lazy"
-       onerror="this.onerror=null;this.src='https://via.placeholder.com/800x480?text=Pakistan+Office';">
-  <div class="p-6">
-    <h2 class="text-xl font-semibold text-emerald-700">Pakistan Office</h2>
-    <p class="mt-2 text-slate-600">
-      Care Line Call Center<br>
-      Gujranwala, Punjab, Pakistan
-    </p>
-    <p class="mt-2 text-sm text-slate-500">
-      Phone: +92 343 5549412<br>
-      WhatsApp: +92 337 5647705<br>
-      Email: info.carelinecallcenter@gmail.com
-    </p>
-  </div>
-</div>
-
-    <!-- Back button -->
-    <div class="mt-12">
-      <a href="index.html" class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-md shadow hover:bg-emerald-700 transition">← Back to Home</a>
+      <!-- Pakistan -->
+      <div class="card bg-slate-900 border border-slate-800 rounded-xl overflow-hidden text-left">
+        <img src="pakistan.jpg" alt="Care Line Call Center Pakistan Office"
+             class="w-full h-48 object-cover opacity-90"
+             onerror="this.onerror=null;this.src='https://via.placeholder.com/800x480?text=Pakistan+Office';">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold text-emerald-400">Pakistan Office</h2>
+          <p class="mt-2 text-slate-300">
+            Care Line Call Center<br>Gujranwala, Punjab, Pakistan
+          </p>
+          <p class="mt-2 text-sm text-slate-500">
+            Phone: +92 343 5549412<br>WhatsApp: +92 337 5647705<br>Email: info.carelinecallcenter@gmail.com
+          </p>
+        </div>
+      </div>
     </div>
+
+    <!-- Back Button -->
+    <div class="mt-16 text-center">
+      <a href="index.html" class="inline-block bg-emerald-600 text-white px-6 py-3 rounded-md shadow hover:bg-emerald-700 transition">
+        ← Back to Home
+      </a>
+    </div>
+
   </div>
 </main>
 
-<!-- Footer -->
-<footer class="bg-slate-900 text-slate-300 py-8 text-center">
+<!-- Footer with Gradient Glow -->
+<footer class="relative text-slate-300 text-center py-8 bg-slate-950 overflow-hidden">
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent"></div>
+  <div class="absolute -bottom-1 left-0 right-0 h-32 bg-gradient-to-t from-emerald-600/10 via-cyan-500/5 to-transparent blur-2xl"></div>
   <p>&copy; 2005–2025 Care Line Call Center. All Rights Reserved.</p>
   <p class="text-sm mt-2">Email: info.carelinecallcenter@gmail.com | Phone: +92 343 5549412</p>
 </footer>
