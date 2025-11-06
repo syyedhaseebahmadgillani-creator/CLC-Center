@@ -102,6 +102,56 @@ footer::before{
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}}
 
+/* ✅ Soft Animated Gradient Background (for premium modern sections) */
+.soft-animated-gradient {
+  background: linear-gradient(135deg,
+    rgba(16,185,129,0.12),
+    rgba(14,165,233,0.12),
+    rgba(10,15,25,0.6)
+  );
+  background-size: 300% 300%;
+  animation: sectionGradientFlow 12s ease infinite;
+}
+
+@keyframes sectionGradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Styling for the testimonial form inputs */
+.testimonial-input {
+  background: #0b0c0d;
+  border: 1px solid rgba(16,185,129,.25);
+  border-radius: .75rem;
+  padding: .75rem 1rem;
+  color: #e5e5e5;
+  width: 100%;
+  transition: .3s;
+}
+
+.testimonial-input:focus {
+  border-color: var(--emerald);
+  box-shadow: 0 0 12px rgba(16,185,129,.4);
+}
+
+.testimonial-submit {
+  background: linear-gradient(135deg, var(--emerald), var(--blue));
+  padding: .9rem 2rem;
+  border-radius: .75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.testimonial-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(14,165,233,.3);
+}
+
+
 /* === Optional: Floating Particles (disabled for performance) === */
 /*
 .hero-bg .particle{
