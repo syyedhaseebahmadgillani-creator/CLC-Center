@@ -159,14 +159,14 @@
 
 <main>
 
-<!-- HERO with animated gradient and rotating globe -->
+<!-- HERO with animated gradient and glowing rotating globe -->
 <section class="hero-gradient relative overflow-hidden" data-reveal>
 
-  <!-- Animated Background -->
+  <!-- Animated Gradient Background -->
   <div class="absolute inset-0 -z-20 animate-gradient-move bg-[radial-gradient(circle_at_20%_30%,rgba(16,185,129,0.15),transparent_70%),radial-gradient(circle_at_80%_70%,rgba(56,189,248,0.15),transparent_70%)]"></div>
 
-  <!-- Rotating Globe Background -->
-  <div class="absolute inset-0 flex justify-center items-center -z-10 opacity-10">
+  <!-- Glowing Rotating Globe -->
+  <div class="absolute inset-0 flex justify-center items-center -z-10 opacity-10 animate-pulse-glow">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-[500px] h-[500px] animate-spin-slow">
       <defs>
         <radialGradient id="grad" cx="50%" cy="50%" r="50%">
@@ -193,20 +193,20 @@
       <p class="text-lg text-gray-300 leading-relaxed">
         Global leaders in <strong>specialized and compliant call centre services</strong> — proudly serving the 
         <strong>United States, United Kingdom, Canada, Morocco, and the Philippines</strong>.  
-        Since <strong>2005</strong>, we’ve delivered over <strong>2,000 successful projects</strong> for clients worldwide — offering top-quality inbound and outbound campaign solutions with proven compliance, transparency, and conversion performance.
+        Since <strong>2005</strong>, we’ve delivered over <strong>2,000 successful projects</strong> across multiple industries, providing world-class inbound and outbound campaign solutions that combine compliance, technology, and human connection.
       </p>
 
       <p class="text-gray-400 text-sm">
-        We empower businesses across industries — from healthcare and broadband to insurance and solar — with multilingual, customer-focused teams and cutting-edge communication technology.
+        We help businesses worldwide scale customer engagement and optimize conversions with multilingual, data-driven, and results-oriented call centre operations.
       </p>
 
       <!-- CTA Buttons -->
       <div class="flex flex-wrap gap-3" data-reveal="fade-up" data-reveal-delay="100">
         <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-6 py-3 rounded-full font-semibold shadow hover:scale-[1.03] transition">
-          🚀 Start a Campaign
+          Start a Campaign
         </a>
         <a href="#services" class="inline-flex items-center gap-2 border border-emerald-500 text-emerald-200 px-6 py-3 rounded-full hover:bg-emerald-600/10 transition">
-          📞 Get a Quote
+          Get a Quote
         </a>
       </div>
 
@@ -251,13 +251,11 @@
         </form>
       </div>
     </div>
-
   </div>
 
   <!-- Bottom Summary -->
   <div class="max-w-6xl mx-auto px-6 mt-16 text-gray-300" data-reveal="fade-up">
     <h2 class="text-center text-xl font-semibold text-emerald-300 mb-6">Our Core Campaign Expertise</h2>
-
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm text-gray-400">
 
       <!-- Inbound Campaigns -->
@@ -313,8 +311,14 @@
 .animate-spin-slow {
   animation: spin-slow 60s linear infinite;
 }
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.07; filter: drop-shadow(0 0 8px rgba(52,211,153,0.4)); }
+  50% { opacity: 0.12; filter: drop-shadow(0 0 16px rgba(56,189,248,0.6)); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
+}
 </style>
-
 
   <!-- SERVICES -->
   <section id="services" class="py-16 bg-[#0e1012]" data-reveal>
