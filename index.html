@@ -321,7 +321,10 @@
 </style>
 
 <!-- SERVICES -->
-<section id="services" class="py-20 bg-[#0e1012] relative overflow-hidden" data-reveal>
+<section id="services" class="relative py-20 overflow-hidden" data-reveal>
+  <!-- Animated gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[#0b0f13] via-[#0f1f1a] to-[#0b0f13] animate-gradient-x opacity-90"></div>
+
   <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
     <h2 class="text-4xl font-bold text-emerald-300">Our Core Services</h2>
     <p class="mt-4 text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -331,11 +334,10 @@
       precision, and people-driven communication.
     </p>
 
-  
     <!-- Services Grid -->
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Service 1 -->
-      <div class="card bg-[#0f1113] p-8 rounded-2xl shadow hover:shadow-emerald-600/20 transition transform hover:-translate-y-1">
+      <!-- Inbound Campaign Management -->
+      <div class="card bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-emerald-600/30 transition transform hover:-translate-y-1 backdrop-blur-sm">
         <div class="text-emerald-400 text-4xl mb-4">📞</div>
         <h3 class="text-xl font-semibold text-emerald-300">Inbound Campaign Management</h3>
         <p class="mt-3 text-gray-300 text-sm leading-relaxed">
@@ -345,8 +347,8 @@
         </p>
       </div>
 
-      <!-- Service 2 -->
-      <div class="card bg-[#0f1113] p-8 rounded-2xl shadow hover:shadow-sky-500/20 transition transform hover:-translate-y-1">
+      <!-- Outbound Lead Generation -->
+      <div class="card bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-sky-500/30 transition transform hover:-translate-y-1 backdrop-blur-sm">
         <div class="text-sky-400 text-4xl mb-4">🚀</div>
         <h3 class="text-xl font-semibold text-emerald-300">Outbound Lead Generation</h3>
         <p class="mt-3 text-gray-300 text-sm leading-relaxed">
@@ -356,8 +358,8 @@
         </p>
       </div>
 
-      <!-- Service 3 -->
-      <div class="card bg-[#0f1113] p-8 rounded-2xl shadow hover:shadow-amber-500/20 transition transform hover:-translate-y-1">
+      <!-- In-House Verification Services -->
+      <div class="card bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-amber-500/30 transition transform hover:-translate-y-1 backdrop-blur-sm">
         <div class="text-amber-400 text-4xl mb-4">✅</div>
         <h3 class="text-xl font-semibold text-emerald-300">In-House Verification Services</h3>
         <p class="mt-3 text-gray-300 text-sm leading-relaxed">
@@ -366,8 +368,8 @@
         </p>
       </div>
 
-      <!-- Service 4 -->
-      <div class="card bg-[#0f1113] p-8 rounded-2xl shadow hover:shadow-purple-500/20 transition transform hover:-translate-y-1">
+      <!-- Medical Billing & Insurance -->
+      <div class="card bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1 backdrop-blur-sm">
         <div class="text-purple-400 text-4xl mb-4">💼</div>
         <h3 class="text-xl font-semibold text-emerald-300">Medical Billing & Insurance Support</h3>
         <p class="mt-3 text-gray-300 text-sm leading-relaxed">
@@ -376,8 +378,8 @@
         </p>
       </div>
 
-      <!-- Service 5 -->
-      <div class="card bg-[#0f1113] p-8 rounded-2xl shadow hover:shadow-rose-500/20 transition transform hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+      <!-- Global BPO Operations -->
+      <div class="card bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-rose-500/30 transition transform hover:-translate-y-1 backdrop-blur-sm sm:col-span-2 lg:col-span-1">
         <div class="text-rose-400 text-4xl mb-4">🌐</div>
         <h3 class="text-xl font-semibold text-emerald-300">Global BPO Operations</h3>
         <p class="mt-3 text-gray-300 text-sm leading-relaxed">
@@ -386,8 +388,8 @@
         </p>
       </div>
 
-      <!-- Service 6 -->
-      <div class="card bg-[#0f1113] p-8 rounded-2xl shadow hover:shadow-cyan-500/20 transition transform hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+      <!-- Dedicated Client Partnership -->
+      <div class="card bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-cyan-500/30 transition transform hover:-translate-y-1 backdrop-blur-sm sm:col-span-2 lg:col-span-1">
         <div class="text-cyan-400 text-4xl mb-4">🤝</div>
         <h3 class="text-xl font-semibold text-emerald-300">Dedicated Client Partnership</h3>
         <p class="mt-3 text-gray-300 text-sm leading-relaxed">
@@ -396,17 +398,22 @@
         </p>
       </div>
     </div>
-
-    <!-- CTA -->
-    <div class="mt-12">
-      <a href="#contact" class="inline-block bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-8 py-3 rounded-full font-semibold hover:scale-[1.03] transition shadow-lg shadow-emerald-600/20">
-        📞 Talk to Our Experts
-      </a>
-    </div>
   </div>
 
   <div class="divider"></div>
 </section>
+
+<!-- Animated Gradient Keyframes -->
+<style>
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 12s ease infinite;
+}
+</style>
 
 
 <!-- ABOUT -->
