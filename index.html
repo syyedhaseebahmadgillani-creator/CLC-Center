@@ -159,49 +159,86 @@
 
 <main>
 
-  <!-- HERO with animated subtle gradient -->
-  <section class="hero-gradient relative overflow-hidden" data-reveal>
-    <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12 hero-content">
-      <!-- Left column -->
-      <div class="md:w-1/2">
-        <div class="flex items-center gap-3">
-          <img src="logo.png" alt="Multidials Solution" class="h-16 w-16 rounded-full shadow-md"/>
-          <h1 class="text-4xl font-bold text-emerald-200">Multidials Solution</h1>
-        </div>
-        <p class="mt-4 text-lg text-gray-300 leading-relaxed">Specialized, compliant call center services for Affordable Care Act enrollments and Final Expense campaigns. Trusted since 2005 with over 2,000 successful projects.</p>
-        <div class="mt-6 flex gap-3">
-          <a href="#contact" class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-6 py-3 rounded-full font-semibold shadow hover:scale-[1.02] transition">Request a Demo</a>
-          <a href="#services" class="inline-flex items-center gap-3 border border-emerald-500 text-emerald-200 px-6 py-3 rounded-full hover:bg-emerald-600/10 transition">Our Services</a>
-        </div>
+ <!-- HERO with animated reveal -->
+<section class="hero-gradient relative overflow-hidden" data-reveal>
+  <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12 hero-content">
+
+    <!-- Left Column -->
+    <div class="md:w-1/2 space-y-5" data-reveal="fade-up">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Multidials Solution Logo" class="h-16 w-16 rounded-full shadow-md"/>
+        <h1 class="text-4xl font-bold text-emerald-200 tracking-tight">Multidials Solution</h1>
+      </div>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        Global leaders in specialized and compliant call centre services — proudly serving the 
+        <strong>United States, United Kingdom, Canada</strong> and beyond.  
+        Since <strong>2005</strong>, we’ve delivered over <strong>2,000 successful projects</strong>, offering reliable inbound and outbound campaign solutions trusted worldwide.
+      </p>
+
+      <div class="flex flex-wrap gap-3" data-reveal="fade-up" data-reveal-delay="100">
+        <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-6 py-3 rounded-full font-semibold shadow hover:scale-[1.03] transition">
+          🚀 Start a Campaign
+        </a>
+        <a href="#services" class="inline-flex items-center gap-2 border border-emerald-500 text-emerald-200 px-6 py-3 rounded-full hover:bg-emerald-600/10 transition">
+          📞 Get a Quote
+        </a>
       </div>
 
-      <!-- Right column - quick contact card -->
-      <div class="md:w-1/2">
-        <div class="bg-[#0f1113] border border-emerald-700/6 rounded-2xl p-6 shadow-xl card">
-          <h3 class="text-emerald-300 font-semibold">Quick Contact</h3>
-          <p class="text-sm text-gray-400">Leave your details and we’ll call within one business day.</p>
-          <form action="https://formspree.io/f/xyzndbjl" method="POST" class="mt-4 grid gap-3">
-            <input name="name" required placeholder="Full Name" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
-            <input name="phone" required type="tel" placeholder="Phone Number" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
-            <input name="email" type="email" placeholder="Email (optional)" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
-            <select name="interest" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200">
-              <option>I'm interested in…</option>
-              <option>Affordable Care Act (ACA) Campaign</option>
-              <option>Final Expense Campaign</option>
-              <option>Both / General inquiry</option>
-            </select>
-            <textarea name="message" rows="3" placeholder="Short message (optional)" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200"></textarea>
-            <div class="flex gap-2">
-              <button type="submit" class="flex-1 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-4 py-2 rounded-md shadow hover:opacity-95 transition">Request Callback</button>
-              <a href="tel:+923435549412" class="flex-1 inline-flex items-center justify-center border border-gray-700 px-4 py-2 rounded-md text-gray-300 hover:bg-gray-800 transition">Call Now</a>
-            </div>
-          </form>
+      <!-- Achievements -->
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center" data-reveal="fade-up" data-reveal-delay="200">
+        <div>
+          <h3 class="text-2xl font-bold text-emerald-300">2,000+</h3>
+          <p class="text-gray-400 text-sm">Projects Completed</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-emerald-300">20+</h3>
+          <p class="text-gray-400 text-sm">Campaign Types</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-emerald-300">3+</h3>
+          <p class="text-gray-400 text-sm">Continents Served</p>
         </div>
       </div>
     </div>
-    <!-- subtle divider bottom -->
-    <div class="divider"></div>
-  </section>
+
+    <!-- Right Column (Contact Card) -->
+    <div class="md:w-1/2" data-reveal="fade-left">
+      <div class="bg-[#0f1113] border border-emerald-700/10 rounded-2xl p-6 shadow-xl card hover:shadow-emerald-700/10 transition">
+        <h3 class="text-emerald-300 font-semibold text-lg">Quick Contact</h3>
+        <p class="text-sm text-gray-400 mb-4">Leave your details and we’ll reach out within one business day.</p>
+        <form action="https://formspree.io/f/xyzndbjl" method="POST" class="grid gap-3">
+          <input name="name" required placeholder="Full Name" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
+          <input name="phone" required type="tel" placeholder="Phone Number" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
+          <input name="email" type="email" placeholder="Email (optional)" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200" />
+          <select name="interest" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200">
+            <option>I'm interested in…</option>
+            <option>ACA (Affordable Care Act)</option>
+            <option>Final Expense Campaign</option>
+            <option>ACP / Medicare / Solar</option>
+            <option>General Inquiry</option>
+          </select>
+          <textarea name="message" rows="3" placeholder="Short message (optional)" class="w-full px-4 py-2 border rounded-md bg-[#0b0c0d] border-gray-800 text-gray-200"></textarea>
+          <div class="flex gap-2">
+            <button type="submit" class="flex-1 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-4 py-2 rounded-md shadow hover:opacity-95 transition">Request Callback</button>
+            <a href="tel:+923435549412" class="flex-1 inline-flex items-center justify-center border border-gray-700 px-4 py-2 rounded-md text-gray-300 hover:bg-gray-800 transition">Call Now</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Summary -->
+  <div class="max-w-6xl mx-auto px-6 mt-12 text-center text-gray-400 text-sm" data-reveal="fade-up">
+    <p>
+      <strong>Inbound Expertise:</strong> Earth Broadband • Taxi Dispatch • Final Expense • In-House Verification • Medical Billing • Insurance Support  
+      <br class="hidden sm:block">
+      <strong>Outbound Excellence:</strong> ACP • ACA • Medicare • Auto Insurance • Roofing • Home Improvement • Solar • Broadband
+    </p>
+  </div>
+
+  <div class="divider"></div>
+</section>
 
   <!-- SERVICES -->
   <section id="services" class="py-16 bg-[#0e1012]" data-reveal>
