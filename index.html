@@ -159,9 +159,29 @@
 
 <main>
 
-<!-- HERO with animated reveal -->
+<!-- HERO with animated gradient and rotating globe -->
 <section class="hero-gradient relative overflow-hidden" data-reveal>
-  <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12 hero-content">
+
+  <!-- Animated Background -->
+  <div class="absolute inset-0 -z-20 animate-gradient-move bg-[radial-gradient(circle_at_20%_30%,rgba(16,185,129,0.15),transparent_70%),radial-gradient(circle_at_80%_70%,rgba(56,189,248,0.15),transparent_70%)]"></div>
+
+  <!-- Rotating Globe Background -->
+  <div class="absolute inset-0 flex justify-center items-center -z-10 opacity-10">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-[500px] h-[500px] animate-spin-slow">
+      <defs>
+        <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#34d399" />
+          <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2" />
+        </radialGradient>
+      </defs>
+      <circle cx="100" cy="100" r="90" stroke="url(#grad)" stroke-width="0.8" fill="none"/>
+      <path d="M10 100a90 90 0 0 0 180 0 90 90 0 0 0-180 0" stroke="url(#grad)" stroke-width="0.6" fill="none"/>
+      <path d="M100 10a90 90 0 0 0 0 180 90 90 0 0 0 0-180" stroke="url(#grad)" stroke-width="0.6" fill="none"/>
+      <path d="M50 100a50 90 0 0 0 100 0 50 90 0 0 0-100 0" stroke="url(#grad)" stroke-width="0.5" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12 hero-content relative">
 
     <!-- Left Column -->
     <div class="md:w-1/2 space-y-6" data-reveal="fade-up">
@@ -171,22 +191,22 @@
       </div>
 
       <p class="text-lg text-gray-300 leading-relaxed">
-        Global leaders in <strong>specialized and compliant call centre services</strong> — proudly serving clients in the 
+        Global leaders in <strong>specialized and compliant call centre services</strong> — proudly serving the 
         <strong>United States, United Kingdom, Canada, Morocco, and the Philippines</strong>.  
-        Since <strong>2005</strong>, we’ve executed over <strong>2,000 successful projects</strong>, delivering end-to-end inbound and outbound campaign solutions that drive measurable results and compliance excellence across industries.
+        Since <strong>2005</strong>, we’ve delivered over <strong>2,000 successful projects</strong> for clients worldwide — offering top-quality inbound and outbound campaign solutions with proven compliance, transparency, and conversion performance.
       </p>
 
       <p class="text-gray-400 text-sm">
-        From healthcare enrolments to solar and insurance outreach, our trained professionals bring precision, empathy, and efficiency to every interaction.
+        We empower businesses across industries — from healthcare and broadband to insurance and solar — with multilingual, customer-focused teams and cutting-edge communication technology.
       </p>
 
-      <!-- Call to Action Buttons -->
+      <!-- CTA Buttons -->
       <div class="flex flex-wrap gap-3" data-reveal="fade-up" data-reveal-delay="100">
         <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-sky-500 text-white px-6 py-3 rounded-full font-semibold shadow hover:scale-[1.03] transition">
-          Start a Campaign
+          🚀 Start a Campaign
         </a>
         <a href="#services" class="inline-flex items-center gap-2 border border-emerald-500 text-emerald-200 px-6 py-3 rounded-full hover:bg-emerald-600/10 transition">
-          Get a Quote
+          📞 Get a Quote
         </a>
       </div>
 
@@ -209,7 +229,7 @@
 
     <!-- Right Column (Contact Card) -->
     <div class="md:w-1/2" data-reveal="fade-left">
-      <div class="bg-[#0f1113] border border-emerald-700/10 rounded-2xl p-6 shadow-xl card hover:shadow-emerald-700/10 transition">
+      <div class="bg-[#0f1113]/90 border border-emerald-700/10 rounded-2xl p-6 shadow-xl card hover:shadow-emerald-700/10 transition">
         <h3 class="text-emerald-300 font-semibold text-lg">Quick Contact</h3>
         <p class="text-sm text-gray-400 mb-4">Leave your details and we’ll reach out within one business day.</p>
         <form action="https://formspree.io/f/xyzndbjl" method="POST" class="grid gap-3">
@@ -248,8 +268,8 @@
           <li>Taxi Dispatch & Booking Assistance</li>
           <li>Final Expense Enquiries</li>
           <li>In-house Verification & QA Calls</li>
-          <li>Medical Billing Support</li>
-          <li>Health and Life Insurance Queries</li>
+          <li>Medical Billing & Appointment Handling</li>
+          <li>Health & Life Insurance Queries</li>
           <li>Technical Helpdesk & Billing Queries</li>
           <li>Customer Retention & Renewal Services</li>
         </ul>
@@ -261,12 +281,12 @@
         <ul class="space-y-2 list-disc list-inside">
           <li>Affordable Connectivity Program (ACP)</li>
           <li>Affordable Care Act (ACA) Enrolments</li>
-          <li>Medicare Lead Generation</li>
+          <li>Medicare & Health Insurance Outreach</li>
           <li>Auto Insurance Campaigns</li>
-          <li>Roofing and Home Improvement Offers</li>
-          <li>Solar and Renewable Energy Campaigns</li>
-          <li>Internet & Broadband Promotions</li>
-          <li>Follow-up, Cross-sell, and Survey Calls</li>
+          <li>Roofing & Home Improvement Offers</li>
+          <li>Solar & Renewable Energy Promotions</li>
+          <li>Broadband & Internet Sales</li>
+          <li>Follow-up, Survey & Cross-sell Calls</li>
         </ul>
       </div>
 
@@ -275,6 +295,26 @@
 
   <div class="divider mt-12"></div>
 </section>
+
+<!-- Animations -->
+<style>
+@keyframes gradient-move {
+  0% { transform: translate(0, 0); opacity: 0.9; }
+  50% { transform: translate(-5%, -5%); opacity: 1; }
+  100% { transform: translate(0, 0); opacity: 0.9; }
+}
+.animate-gradient-move {
+  animation: gradient-move 10s ease-in-out infinite alternate;
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+</style>
+
 
   <!-- SERVICES -->
   <section id="services" class="py-16 bg-[#0e1012]" data-reveal>
