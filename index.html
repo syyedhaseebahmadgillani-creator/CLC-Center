@@ -494,35 +494,84 @@
 
 
   <!-- WHY CHOOSE US -->
-  <section id="why-us" class="py-16 bg-[#0c0d0e]" data-reveal>
-    <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-2xl font-bold text-emerald-300">Why Choose Us</h3>
-      <p class="text-gray-400 mt-2">What makes Multidials Solution stand out from other service providers.</p>
+<section id="why-us" class="relative py-20 overflow-hidden bg-[#0b0f13]" data-reveal>
+  <!-- Enhanced animated emerald-to-cyan gradient background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-emerald-800 via-cyan-700 to-emerald-900 animate-gradient-x opacity-90"></div>
 
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
-          <h4 class="font-semibold text-emerald-300">Proven Experience</h4>
-          <p class="text-sm text-gray-300 mt-2">Over 7 years of consistent success in ACA and Final Expense campaigns.</p>
-        </div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+    <h3 class="text-4xl font-bold text-emerald-300 drop-shadow-md">Why Choose Multidials Solution</h3>
+    <p class="mt-4 text-gray-300 max-w-2xl mx-auto leading-relaxed">
+      Trusted by businesses worldwide for our <strong>proven expertise</strong>, <strong>cutting-edge technology</strong>, and 
+      <strong>people-first approach</strong>. We go beyond outsourcing — we become your <strong>strategic growth partner</strong>.
+    </p>
 
-        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
-          <h4 class="font-semibold text-emerald-300">HIPAA-Compliant</h4>
-          <p class="text-sm text-gray-300 mt-2">Secure data handling and strict adherence to compliance standards.</p>
-        </div>
+    <!-- Feature Cards -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-emerald-400/40 hover:-translate-y-1 transition transform backdrop-blur-sm">
+        <div class="text-emerald-400 text-4xl mb-3">🏆</div>
+        <h4 class="font-semibold text-emerald-300 text-lg">Proven Global Experience</h4>
+        <p class="text-sm text-gray-200 mt-2 leading-relaxed">
+          Over <strong>20 years of excellence</strong> and <strong>2,000+ successful projects</strong> — 
+          empowering clients across <strong>five countries</strong> with sustainable business growth.
+        </p>
+      </div>
 
-        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
-          <h4 class="font-semibold text-emerald-300">24/7 Availability</h4>
-          <p class="text-sm text-gray-300 mt-2">Round-the-clock support with multilingual, friendly agents.</p>
-        </div>
+      <!-- Card 2 -->
+      <div class="bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-cyan-400/40 hover:-translate-y-1 transition transform backdrop-blur-sm">
+        <div class="text-cyan-400 text-4xl mb-3">🔒</div>
+        <h4 class="font-semibold text-emerald-300 text-lg">Secure & Compliant Operations</h4>
+        <p class="text-sm text-gray-200 mt-2 leading-relaxed">
+          We strictly adhere to <strong>HIPAA</strong>, <strong>TCPA</strong>, and <strong>GDPR</strong> regulations — 
+          ensuring every client and customer interaction remains private, ethical, and secure.
+        </p>
+      </div>
 
-        <div class="bg-[#0f1113] p-6 rounded-lg shadow card">
-          <h4 class="font-semibold text-emerald-300">Measurable Results</h4>
-          <p class="text-sm text-gray-300 mt-2">Transparent reports, KPIs, and consistent performance reviews.</p>
-        </div>
+      <!-- Card 3 -->
+      <div class="bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-emerald-400/40 hover:-translate-y-1 transition transform backdrop-blur-sm">
+        <div class="text-emerald-400 text-4xl mb-3">🌍</div>
+        <h4 class="font-semibold text-emerald-300 text-lg">24/7 Global Operations</h4>
+        <p class="text-sm text-gray-200 mt-2 leading-relaxed">
+          With multilingual teams operating across <strong>multiple time zones</strong>, 
+          we deliver responsive, customer-focused service around the clock — no downtime, ever.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#0f1113]/95 p-8 rounded-2xl shadow hover:shadow-cyan-400/40 hover:-translate-y-1 transition transform backdrop-blur-sm">
+        <div class="text-cyan-400 text-4xl mb-3">📊</div>
+        <h4 class="font-semibold text-emerald-300 text-lg">Performance-Driven Insights</h4>
+        <p class="text-sm text-gray-200 mt-2 leading-relaxed">
+          Every decision is powered by <strong>real-time analytics</strong> and <strong>custom KPIs</strong>.  
+          We turn data into strategy — driving measurable results and continuous improvement.
+        </p>
       </div>
     </div>
-    <div class="divider"></div>
-  </section>
+
+    <!-- Highlight Bar -->
+    <div class="mt-16 bg-[#101214]/90 border border-emerald-700/30 rounded-2xl p-8 backdrop-blur-md shadow-inner max-w-4xl mx-auto">
+      <p class="text-lg text-gray-100 leading-relaxed">
+        At <strong>Multidials Solution</strong>, every call is a conversation that builds trust, every project a 
+        partnership that creates value — and every result a reflection of our <strong>commitment to excellence</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider mt-12"></div>
+</section>
+
+<!-- Gradient Animation -->
+<style>
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 10s ease-in-out infinite;
+}
+</style>
+
 
   <!-- TEAM -->
   <section id="team" class="py-16 bg-[#0e1012]" data-reveal>
