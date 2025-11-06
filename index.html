@@ -1020,9 +1020,26 @@
 ...
 <!-- ✅ PASTE HERE, before </body> -->
 <script>
-const sheetURL = "https://script.google.com/macros/s/AKfycbx9vHBELmkFdnBBozhIjivNYZwjbbz3Y-IlXJm3TaK_DMyffgu8_LS8JHqm1D6IJ-Vl/exec";
+const sheetURL =
+  "https://script.google.com/macros/s/AKfycbx9vHBELmkFdnBBozhIjivNYZwjbbz3Y-IlXJm3TaK_DMyffgu8_LS8JHqm1D6IJ-Vl/exec";
 
-document.getElementById("testimonialForm").addEventListener("submit", function(e) {
+/* Load testimonials from Google Sheet on page load */
+window.addEventListener("DOMContentLoaded", loadTestimonials);
+
+function loadTestimonials() {
+  fetch(sheetURL)
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById("testimonialList").innerHTML = ""; // Clear existing
+      data.reverse().forEach((t) => {
+        addTestimonialCard(t.name, t.location, t.message);
+      });
+    })
+    .catch((err) => console.error("Error fetching testimonials:", err));
+}
+
+/* Handle form submission (POST to Google Sheet) */
+document.getElementById("testimonialForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const name = document.getElementById("name").value;
@@ -1031,15 +1048,15 @@ document.getElementById("testimonialForm").addEventListener("submit", function(e
 
   fetch(sheetURL, {
     method: "POST",
-    body: JSON.stringify({ name, location, message })
+    body: JSON.stringify({ name, location, message }),
   }).then(() => {
-    document.getElementById("submitted").classList.remove("hidden");
     addTestimonialCard(name, location, message);
+    document.getElementById("submitted").classList.remove("hidden");
     document.getElementById("testimonialForm").reset();
   });
 });
 
-/* Add testimonial instantly on webpage */
+/* Append new testimonial on page instantly */
 function addTestimonialCard(name, location, message) {
   const card = `<div class="bg-[#0f1113] p-6 rounded-xl shadow-md border border-gray-700/30 card">
       <p class="text-gray-300 italic">"${message}"</p>
